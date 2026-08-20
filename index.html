@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energieberatung für Wohngebäude | Persönlich und unabhängig</title>
+    <meta name="description" content="Unabhängige Energieberatung für Wohngebäude: Sanierungsfahrplan, Fördermittelbegleitung, Heizungsberatung, Thermografie und innovative Gebäudedatenanalyse.">
+    <meta name="theme-color" content="#07111f">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Energieberatung für Wohngebäude">
+    <meta property="og:description" content="Zukunftssicher sanieren, Energie sparen und Fördermöglichkeiten strukturiert nutzen.">
+    <meta property="og:image" content="images/hero-house.webp">
+
+    <link rel="icon" type="image/svg+xml" href="images/energieberatung-label.svg">
+
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+    <div class="hero-particle-field" data-hero-particles aria-hidden="true"></div>
+
+    <!-- SVG-Sprite: Die Symbole werden mehrfach verwendet und benötigen keine externe Bibliothek. -->
+    <svg class="svg-sprite" aria-hidden="true">
+        <symbol id="icon-house" viewBox="0 0 24 24">
+            <path d="M3 11.5 12 4l9 7.5M5.5 10v9.5h13V10M9.5 19.5v-6h5v6"/>
+        </symbol>
+        <symbol id="icon-route" viewBox="0 0 24 24">
+            <circle cx="5" cy="18" r="2.2"/>
+            <circle cx="19" cy="6" r="2.2"/>
+            <path d="M7.2 18h2.2a3 3 0 0 0 3-3v-6a3 3 0 0 1 3-3h1.4"/>
+        </symbol>
+        <symbol id="icon-funding" viewBox="0 0 24 24">
+            <path d="M4 8.5h16M6 5h12l2 3.5v10.5H4V8.5L6 5Z"/>
+            <path d="M8 13h4M8 16h7"/>
+            <circle cx="17" cy="13.5" r="1.5"/>
+        </symbol>
+        <symbol id="icon-heatpump" viewBox="0 0 24 24">
+            <rect x="3.5" y="4" width="17" height="16" rx="2"/>
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 7.8c1.7 1.6 1.9 3 .6 4.2M16.2 12c-1.6 1.7-3 1.9-4.2.6M12 16.2c-1.7-1.6-1.9-3-.6-4.2M7.8 12c1.6-1.7 3-1.9 4.2-.6"/>
+        </symbol>
+        <symbol id="icon-thermal" viewBox="0 0 24 24">
+            <path d="M2.5 12s3.5-5.2 9.5-5.2S21.5 12 21.5 12 18 17.2 12 17.2 2.5 12 2.5 12Z"/>
+            <circle cx="12" cy="12" r="2.5"/>
+            <path d="M18.5 4.5v3M20 6h-3M5.5 16.5v3M7 18H4"/>
+        </symbol>
+        <symbol id="icon-checklist" viewBox="0 0 24 24">
+            <rect x="5" y="3.5" width="14" height="17" rx="2"/>
+            <path d="m8.2 9 1.4 1.4L12 8M13.8 9h2.4m-8 5 1.4 1.4L12 13M13.8 14h2.4"/>
+        </symbol>
+        <symbol id="icon-compass" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8.5"/>
+            <path d="m15.7 8.3-2.1 5.3-5.3 2.1 2.1-5.3 5.3-2.1Z"/>
+        </symbol>
+        <symbol id="icon-chart" viewBox="0 0 24 24">
+            <path d="M4 19.5h16M6.5 16v-4M11 16V8M15.5 16v-6M20 16V5"/>
+        </symbol>
+        <symbol id="icon-dialog" viewBox="0 0 24 24">
+            <path d="M4 5.5h16v11H9l-5 3v-14Z"/>
+            <path d="M8 9.5h8M8 12.5h5"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+            <path d="M12 3.5 19 6v5.2c0 4.3-2.8 7.6-7 9.3-4.2-1.7-7-5-7-9.3V6l7-2.5Z"/>
+            <path d="m8.5 12 2.2 2.2 4.8-5"/>
+        </symbol>
+        <symbol id="icon-arrow" viewBox="0 0 24 24">
+            <path d="M5 12h14M14 7l5 5-5 5"/>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24">
+            <rect x="3.5" y="5" width="17" height="14" rx="2"/>
+            <path d="m4.5 7 7.5 6 7.5-6"/>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+            <path d="M8.2 4.2 5.5 5.8c-.8.5-.9 1.5-.7 2.3 1.5 5.4 5.7 9.6 11.1 11.1.8.2 1.8.1 2.3-.7l1.6-2.7-4.1-2.2-1.5 1.8c-2.2-1-4.6-3.4-5.6-5.6l1.8-1.5-2.2-4.1Z"/>
+        </symbol>
+        <symbol id="icon-pin" viewBox="0 0 24 24">
+            <path d="M12 21s6-5.7 6-11a6 6 0 1 0-12 0c0 5.3 6 11 6 11Z"/>
+            <circle cx="12" cy="10" r="2"/>
+        </symbol>
+    </svg>
+
+   <header class="site-header" data-header>
+    <nav class="navbar container" aria-label="Hauptnavigation">
+
+        <!-- Linke Seite -->
+        <div class="nav-left">
+            <a href="#home" class="brand consultancy-brand">
+                <img class="consultancy-brand-icon"
+                     src="images/energieberatung-label.svg"
+                     alt=""
+                     width="64"
+                     height="64">
+
+                <span class="consultancy-brand-text">
+                    <strong>Energieberatung</strong>
+                    <span>für Wohngebäude</span>
+                </span>
+            </a>
+
+            <ul class="nav-links-left">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Button -->
+        <button class="nav-toggle" type="button"
+                aria-expanded="false"
+                aria-controls="nav-panel"
+                data-nav-toggle>
+            <span class="sr-only">Navigation öffnen</span>
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Rechte Seite -->
+        <div class="nav-panel" id="nav-panel" data-nav-panel>
+
+            <ul class="nav-links-right">
+                <li class="nav-innovation-item">
+                    <a href="#innovation" class="nav-innovation-brand">
+                        <img src="images/logo_skywalker.png" alt="Skywalker Energie">
+                        <span class="nav-innovation-label">Innovation</span>
+                    </a>
+                </li>
+
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+
+            <a href="#kontakt" class="nav-cta">Erstgespräch</a>
+
+        </div>
+
+    </nav>
+
+    <div class="scroll-progress">
+        <span data-scroll-progress></span>
+    </div>
+</header>
+
+    <main id="main-content">
+        <!-- =========================================================
+             HERO
+        ========================================================== -->
+        <section id="home" class="hero" data-section>
+            <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow" data-reveal>Energieberatung für Wohngebäude</p>
+
+                    <h2 data-reveal>
+                        Fördermittel nutzen<br>
+                        <span>Energie sparen</span> <br>
+                        Nachhaltig wohnen
+                    </h2>
+
+                    <p class="hero-lead" data-reveal>
+                        Ihr unabhängiger Energieberater für Wohngebäude im Norden.
+                    </p>
+
+                    <p class="hero-text" data-reveal>
+                        Ich begleite Eigentümerinnen und Eigentümer von der ersten Gebäudeanalyse
+                        bis zur strukturierten Modernisierungsentscheidung – technisch fundiert,
+                        wirtschaftlich nachvollziehbar und persönlich.
+                    </p>
+
+                    <div class="hero-actions" data-reveal>
+                        <a href="#leistungen" class="button button-primary">
+                            Leistungen entdecken
+                            <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+                        </a>
+                        <a href="#kontakt" class="button button-outline">Erstberatung vereinbaren</a>
+                    </div>
+
+                    <div class="hero-credentials" data-reveal aria-label="Qualifikationen und Fokus">
+                        <span>Wirtschaftsingenieur (B.ENG)</span>
+                        <span>Gebäudeenergieberater (HWK)</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual" data-reveal>
+                    <div class="hero-glow" aria-hidden="true"></div>
+                    <figure class="hero-image">
+                        <img src="images/hero-house.webp"
+                             alt="Modernes Wohnhaus mit Photovoltaik, Wärmepumpe, Drohne und thermischer Gebäudeanalyse"
+                             width="911"
+                             height="900"
+                             fetchpriority="high"
+                             decoding="async">
+                        <div class="hero-image-shade" aria-hidden="true"></div>
+                    </figure>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#leistungen" aria-label="Zu den Leistungen scrollen">
+                <span></span>
+                Mehr erfahren
+            </a>
+        </section>
+
+        <!-- =========================================================
+             LEISTUNGEN
+        ========================================================== -->
+        <section id="leistungen" class="section section-soft" data-section>
+            <div class="container">
+                <header class="section-heading">
+                    <div>
+                        <p class="eyebrow" data-reveal>Leistungen</p>
+                        <h2 data-reveal>Energieberatung für Ihr Zuhause.</h2>
+                    </div>
+                    <p class="section-intro" data-reveal>
+                        Jedes Gebäude ist anders. Deshalb entsteht die passende Sanierungsstrategie
+                        aus Gebäudedaten, Ihren Zielen, dem verfügbaren Budget und den zum Projektzeitpunkt
+                        relevanten Fördermöglichkeiten.
+                    </p>
+                </header>
+
+                <div class="services-grid">
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-house"></use></svg></div>
+                        <span class="service-number">01</span>
+                        <h3>Vor-Ort-Energieberatung</h3>
+                        <p>
+                            Systematische Bestandsaufnahme von Gebäudehülle, Anlagentechnik,
+                            Energieverbrauch und individuellen Rahmenbedingungen.
+                        </p>
+                        <ul class="check-list">
+                            <li>Gebäude- und Verbrauchsanalyse</li>
+                            <li>Fördermittelbegleitung</li>
+                            <li>Verständliche Ergebnisbesprechung</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card featured-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-route"></use></svg></div>
+                        <span class="service-number">02</span>
+                        <span class="card-label">Beliebter Einstieg</span>
+                        <h3>Individueller Sanierungsfahrplan iSFP</h3>
+                        <p>
+                            Ein abgestimmter Fahrplan zeigt, welche Maßnahmen sinnvoll aufeinander
+                            aufbauen und wie sich Ihr Gebäude schrittweise entwickeln kann.
+                        </p>
+                        <ul class="check-list">
+                            <li>Sanierung in sinnvollen Etappen</li>
+                            <li>Varianten und Abhängigkeiten</li>
+                            <li>Langfristige Investitionsplanung</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-funding"></use></svg></div>
+                        <span class="service-number">03</span>
+                        <h3>Energieausweis</h3>
+                        <p>
+                            Erstellung von Energieausweisen für den Verkauf von Wohngebäuden.
+                            Energieverbräuche überwachen. Energiemanagement für Ihr Zuhause.
+                        </p>
+                        <ul class="check-list">
+                            <li>Energiebedarfsausweis</li>
+                            <li>Energieverbrauchsausweis</li>
+                            <li>Energiecontrolling</li>
+                        </ul>
+                    </article>
+<!--
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-heatpump"></use></svg></div>
+                        <span class="service-number">04</span>
+                        <h3>Heizung</h3>
+                        <p>
+                            Bewertung von Heizsystem, Wärmebedarf und Gebäudezustand als Grundlage
+                            für eine belastbare Systementscheidung.
+                        </p>
+                        <ul class="check-list">
+                            <li>Bestandsheizung analysieren</li>
+                            <li>Varianten gegenüberstellen</li>
+                            <li>Gebäude und Technik zusammendenken</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-thermal"></use></svg></div>
+                        <span class="service-number">05</span>
+                        <h3>Thermografie</h3>
+                        <p>
+                            Wärmebilder ergänzen die Bestandsaufnahme und helfen, auffällige Bereiche
+                            an Fassade, Dach, Fenstern und Anschlüssen einzugrenzen.
+                        </p>
+                        <ul class="check-list">
+                            <li>Aufnahme bei geeigneter Witterung</li>
+                            <li>Einordnung auffälliger Muster</li>
+                            <li>Dokumentation der Beobachtungen</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="service-icon"><svg><use href="#icon-checklist"></use></svg></div>
+                        <span class="service-number">06</span>
+                        <h3>Fördermittelbegleitung</h3>
+                        <p>
+                            Orientierung im Förderdschungel und strukturierte Begleitung der
+                            technischen Unterlagen und erforderlichen Projektschritte.
+                        </p>
+                        <ul class="check-list">
+                            <li>Prüfung passender Programme</li>
+                            <li>Technische Projektunterlagen</li>
+                            <li>Begleitung bis zum Nachweis</li>
+                        </ul>
+                    </article>
+                </div>
+            -->
+                <div class="section-note" data-reveal>
+                    <svg aria-hidden="true"><use href="#icon-dialog"></use></svg>
+                    <p>
+                        Förderbedingungen und technische Anforderungen können sich ändern.
+                        Entscheidend sind immer die zum Zeitpunkt Ihres Vorhabens gültigen Regeln.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             VORTEILE (wurde ausgeblendet)
+        ========================================================== -->
+        <section id="vorteile" style="display: none;" class="section benefits" data-section>
+            <div class="container benefits-grid">
+                <div class="benefits-copy">
+                    <p class="eyebrow" data-reveal>Ihre Vorteile</p>
+                    <h2 data-reveal>Entscheidungen, die technisch und wirtschaftlich tragen.</h2>
+                    <p data-reveal>
+                        Gute Energieberatung liefert nicht nur Kennwerte. Sie übersetzt komplexe
+                        Zusammenhänge in eine klare Reihenfolge, damit Sie Investitionen sicherer
+                        planen und Angebote besser bewerten können.
+                    </p>
+
+                    <div class="benefit-highlight" data-reveal>
+                        <span class="highlight-value">1</span>
+                        <div>
+                            <strong>persönlicher Ansprechpartner</strong>
+                            <p>Von der Analyse bis zur nächsten konkreten Entscheidung.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-list">
+                    <article class="benefit-item" data-reveal>
+                        <div class="benefit-icon"><svg><use href="#icon-compass"></use></svg></div>
+                        <div>
+                            <h3>Unabhängiger Blick</h3>
+                            <p>Die Empfehlung orientiert sich an Gebäude, Ziel und Budget – nicht an einem einzelnen Produkt.</p>
+                        </div>
+                    </article>
+
+                    <article class="benefit-item" data-reveal>
+                        <div class="benefit-icon"><svg><use href="#icon-chart"></use></svg></div>
+                        <div>
+                            <h3>Wirtschaftlich eingeordnet</h3>
+                            <p>Investition, Einsparpotenzial, Abhängigkeiten und sinnvolle Reihenfolge werden gemeinsam betrachtet.</p>
+                        </div>
+                    </article>
+
+                    <article class="benefit-item" data-reveal>
+                        <div class="benefit-icon"><svg><use href="#icon-dialog"></use></svg></div>
+                        <div>
+                            <h3>Verständlich erklärt</h3>
+                            <p>Sie erhalten keine reine Fachsprache, sondern nachvollziehbare Optionen und konkrete nächste Schritte.</p>
+                        </div>
+                    </article>
+
+                    <article class="benefit-item" data-reveal>
+                        <div class="benefit-icon"><svg><use href="#icon-shield"></use></svg></div>
+                        <div>
+                            <h3>Strukturiert begleitet</h3>
+                            <p>Unterlagen, Entscheidungen und Projektstände bleiben transparent und übersichtlich dokumentiert.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             ABLAUF
+        ========================================================== -->
+        <section id="ablauf" class="section section-soft process" data-section>
+            <div class="container">
+                <header class="section-heading centered">
+                    <p class="eyebrow" data-reveal>Ablauf Energieberatung</p>
+                    <h2 data-reveal>Von der ersten Frage zum umsetzbaren Plan.</h2>
+                    <p class="section-intro" data-reveal>
+                        Ein klarer Prozess schafft Sicherheit. Umfang und Tiefe werden passend zu
+                        Ihrem Gebäude und Ihrer aktuellen Entscheidungssituation festgelegt.
+                    </p>
+                </header>
+
+                <ol class="process-list">
+                    <li class="process-step" data-reveal>
+                        <span class="process-number">01</span>
+                        <div>
+                            <h3>Kennenlernen</h3>
+                            <p>Ziele, Gebäude, Zeitrahmen und aktuelle Fragestellung kurz einordnen.</p>
+                        </div>
+                    </li>
+                    <li class="process-step" data-reveal>
+                        <span class="process-number">02</span>
+                        <div>
+                            <h3>Bestandsaufnahme</h3>
+                            <p>Unterlagen sichten, Vor-Ort-Termin durchführen und relevante Daten erfassen.</p>
+                        </div>
+                    </li>
+                    <li class="process-step" data-reveal>
+                        <span class="process-number">03</span>
+                        <div>
+                            <h3>Analyse & Varianten</h3>
+                            <p>Schwachstellen, Maßnahmenpakete, Abhängigkeiten und Alternativen bewerten.</p>
+                        </div>
+                    </li>
+                    <li class="process-step" data-reveal>
+                        <span class="process-number">04</span>
+                        <div>
+                            <h3>Fahrplan & Förderung</h3>
+                            <p>Empfohlene Reihenfolge erläutern und passende Förderwege einordnen.</p>
+                        </div>
+                    </li>
+                    <li class="process-step" data-reveal>
+                        <span class="process-number">05</span>
+                        <div>
+                            <h3>Umsetzung begleiten</h3>
+                            <p>Bei Bedarf Angebote, Nachweise und technische Fragen im Projekt unterstützen.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             INNOVATION
+        ========================================================== -->
+        <section id="innovation" class="innovation-section" data-section>
+            <div class="innovation-bg" aria-hidden="true">
+               <div class="innovation-orbit innovation-orbit-one"></div>
+        <div class="innovation-orbit innovation-orbit-two"></div>
+        <span class="innovation-dot dot-1"></span>
+        <span class="innovation-dot dot-2"></span>
+        <span class="innovation-dot dot-3"></span>
+        <span class="innovation-dot dot-4"></span>
+        <span class="innovation-dot dot-5"></span>
+        <span class="innovation-dot dot-6"></span>
+        <span class="innovation-dot dot-7"></span>
+        <span class="innovation-dot dot-8"></span>
+</div>
+            <div class="container">
+                <div class="innovation-intro">
+                    <div>
+                         <p class="eyebrow" data-reveal>Innovation</p>
+                         <br>
+                        <div class="innovation-provider" data-reveal>
+                            <span>Thermografische Quartiersanalysen</span>
+                            <img src="images/logo_skywalker.png"
+                                 alt="Skywalker Energie"
+                                 width="814"
+                                 height="263"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                       
+                        <h2 data-reveal>Anreize zum Sanieren schaffen!</h2>
+                    </div>
+                    <div data-reveal>
+                        <p>
+                            Das Projekt Skywalker Energie hat einen technologiegestützten 
+                            Ansatz für die flächendeckende thermografische Erfassung und
+                            KI-assistierte Auswertung von Quartieren entwickelt.
+                        </p>
+                        <p>
+                            Wärmebilddaten werden mit offen verfügbaren Geodaten und Gebäudekontext
+                            zusammengeführt. So entsteht eine verständliche Datengrundlage für
+                            Wärmekataster, vertiefende Prüfungen und die Priorisierung weiterer Schritte.
+                        </p>
+                    </div>
+                </div>
+                <button class="innovation-toggle" id="innovation-toggle">
+                Innovation entdecken
+                 <span class="innovation-arrow">→</span>
+                </button>
+                <div id="innovation-details" class="innovation-details">
+
+                <div class="innovation-layout">
+                    <div class="innovation-features">
+                        <article class="innovation-feature" data-reveal>
+                            <span>01</span>
+                            <div>
+                                <h3>Gemeinden & Kommunen</h3>
+                                <p>Wärmeplanung, Quartiersanalysen und Priorisierung energetischer Maßnahmen.</p>
+                            </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>02</span>
+                            <div>
+                                <h3>Eigentumsgenossenschaften</h3>
+                                <p>Transparente Entscheidungsgrundlagen für Investitionen und Förderprogramme.</p>
+                            </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>03</span>
+                            <div>
+                                <h3>Ferienhaussiedlungen</h3>
+                                <p>Energieeffizienz bewerten und Schäden erkennen.</p>
+                            </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>04</span>
+                            <div>
+                                <h3>Wohnungsbaugesellschaften</h3>
+                                <p>Sanierungsstrategien für große Gebäudebestände auf Basis objektiver Wärmedaten.</p>
+                            </div>
+                        </article>
+
+                        <div class="innovation-status" data-reveal>
+                            <span class="status-dot"></span>
+                            <p>
+                                <strong>Projektbezogene Umsetzung:</strong>
+                                Umfang und Terminierung richten sich nach Quartier, Genehmigungslage,
+                                Witterung, Datenschutz und verfügbarer Datengrundlage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Das Original-Pitchdeck wird als seitenweise horizontale Galerie dargestellt. -->
+                    <div class="pitchdeck pitchdeck-carousel" data-pdf-deck data-reveal tabindex="0" aria-label="Pitchdeck Reduce Heat Demand, 12 Seiten">
+                        <div class="deck-topbar">
+                            <div>
+                                <span class="deck-kicker">Skywalker Energie</span>
+                                <strong>Pitchdeck · Reduce Heat Demand</strong>
+                            </div>
+                            <div class="deck-topbar-actions">
+                                <span class="deck-counter" data-pdf-counter>01 / 12</span>
+                                <a class="deck-open-link"
+                                   href="pitchdeck.pdf"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    PDF öffnen <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pitchdeck-viewport">
+                            <div class="pitchdeck-track" data-pdf-track>
+                                <figure class="pitchdeck-page is-current" data-pdf-page aria-label="Seite 1 von 12">
+                                    <img src="images/pitchdeck/page-01.webp"
+                                         alt="Titelfolie: Reduce Heat Demand – AI-assisted thermal imaging"
+                                         width="1920"
+                                         height="1080"
+                                         loading="eager" fetchpriority="low"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 2 von 12">
+                                    <img src="images/pitchdeck/page-02.webp"
+                                         alt="Problem: Die Datenerhebung für die Wärmeplanung ist zeitaufwendig"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 3 von 12">
+                                    <img src="images/pitchdeck/page-03.webp"
+                                         alt="Lösung: Thermografische Aufnahmen mit einer Drohne"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 4 von 12">
+                                    <img src="images/pitchdeck/page-04.webp"
+                                         alt="Lösung: Wärmebilder werden mit offenen GIS-Daten kombiniert"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 5 von 12">
+                                    <img src="images/pitchdeck/page-05.webp"
+                                         alt="MVP: Wärmekataster zur Planung des zukünftigen Wärmebedarfs"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 6 von 12">
+                                    <img src="images/pitchdeck/page-06.webp"
+                                         alt="MVP: Ausgewertetes Wärmebild mit markierter thermischer Schwachstelle"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 7 von 12">
+                                    <img src="images/pitchdeck/page-07.webp"
+                                         alt="MVP: Ausgewertetes Wärmebild mit markierter Schwachstelle und Messwerten"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 8 von 12">
+                                    <img src="images/pitchdeck/page-08.webp"
+                                         alt="Geschäftspotenzial: Weltweite Klimazonen und Einsatzgebiete"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                                <figure class="pitchdeck-page" data-pdf-page aria-label="Seite 9 von 12">
+                                    <img src="images/pitchdeck/page-09.webp"
+                                         alt="Pilotprojekte: drei Wärmekarten, 345 Gebäude und 1.750 Wärmebilder"
+                                         width="1920"
+                                         height="1080"
+                                         loading="lazy"
+                                         decoding="async">
+                                </figure>
+                               
+                            </div>
+                        </div>
+
+                        <div class="deck-controls">
+                            <button type="button" class="deck-arrow" data-pdf-prev aria-label="Vorherige Pitchdeck-Seite">←</button>
+                            <div class="deck-dots" data-pdf-dots aria-label="Pitchdeck-Seitenauswahl"></div>
+                            <button type="button" class="deck-arrow" data-pdf-next aria-label="Nächste Pitchdeck-Seite">→</button>
+                        </div>
+
+                        <div class="pitchdeck-caption">
+                            <p>
+                                Mit Mausrad, Pfeiltasten oder Wischgeste wechseln Sie seitenweise.
+                            </p>
+                            <a href="pitchdeck.pdf" target="_blank" rel="noopener noreferrer">
+                                Vollständiges PDF öffnen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="district-analysis-process" aria-labelledby="quartiersablauf-title">
+                    <header class="district-process-heading" data-reveal>
+                        <div>
+                            <p class="eyebrow">Ablauf der Quartiersanalyse</p>
+                            <h3 id="quartiersablauf-title">Von der Flugfreigabe bis zur verständlichen Datenübergabe.</h3>
+                        </div>
+                        <p>
+                            Die thermografische Quartiersanalyse wird transparent vorbereitet,
+                            unter passenden Rahmenbedingungen durchgeführt und gemeinsam ausgewertet.
+                        </p>
+                    </header>
+
+                    <ol class="district-process-list">
+                        <li class="district-process-step" data-reveal>
+                            <span class="district-step-number">01</span>
+                            <h4>Genehmigung & Flugfreigabe</h4>
+                            <p>Fluggebiet prüfen und erforderliche Genehmigungen beziehungsweise Abstimmungen mit der zuständigen Luftfahrtbehörde vorbereiten.</p>
+                        </li>
+                        <li class="district-process-step" data-reveal>
+                            <span class="district-step-number">02</span>
+                            <h4>Befliegungszeitraum festlegen</h4>
+                            <p>Geeignete Witterung, Temperaturdifferenz und Uhrzeit abstimmen und den Einsatz verbindlich terminieren.</p>
+                        </li>
+                        <li class="district-process-step" data-reveal>
+                            <span class="district-step-number">03</span>
+                            <h4>Bürgerinnen und Bürger informieren</h4>
+                            <p>Anwohner frühzeitig über Zweck, Zeitraum, Datenschutz und Ansprechpartner der Befliegung informieren.</p>
+                        </li>
+                        <li class="district-process-step" data-reveal>
+                            <span class="district-step-number">04</span>
+                            <h4>Quartier befliegen</h4>
+                            <p>Thermische Aufnahmen nach dem abgestimmten Flugplan strukturiert und nachvollziehbar erfassen.</p>
+                        </li>
+                        <li class="district-process-step" data-reveal>
+                            <span class="district-step-number">05</span>
+                            <h4>Daten übergeben & erläutern</h4>
+                            <p>Aufbereitete Wärmebilder und Quartiersauswertung übergeben, Ergebnisse gemeinsam einordnen und nächste Schritte erläutern.</p>
+                        </li>
+                    </ol>
+                    
+                </section>
+
+                <div class="supporters" data-reveal>
+                    <div class="supporters-heading">
+                        <p class="eyebrow">Förderung & Ökosystem</p>
+                        <h3>Unterstützt und begleitet durch</h3>
+                    </div>
+
+                    <div class="supporter-grid">
+                        <a class="supporter-card"
+                           href="https://www.groundbreakers.io/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Groundbreakers Website öffnen">
+                            <small>Accelerator & Netzwerk</small>
+                            <span class="supporter-logo-wrap">
+                                <img class="supporter-logo supporter-logo-groundbreakers"
+                                     src="images/logo_groundbreakers.webp"
+                                     alt="Groundbreakers"
+                                     width="999"
+                                     height="348">
+                            </span>
+                        </a>
+
+                        <a class="supporter-card"
+                           href="https://gruendungsstipendium-sh.de/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Gründungsstipendium Schleswig-Holstein Website öffnen">
+                            <small>Gefördert durch</small>
+                            <span class="supporter-logo-wrap">
+                                <img class="supporter-logo supporter-logo-gssh"
+                                     src="images/logo_gs_sh.svg"
+                                     alt="Gründungsstipendium Schleswig-Holstein"
+                                     width="425"
+                                     height="117">
+                            </span>
+                        </a>
+
+                        <a class="supporter-card"
+                           href="https://www.plugandplaytechcenter.com/innovation-services/startups/accelerator-programs"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Plug and Play Accelerator Programs öffnen">
+                            <small>Innovation Ecosystem</small>
+                            <span class="supporter-logo-wrap">
+                                <img class="supporter-logo supporter-logo-pnp"
+                                     src="images/logo_plug-and-play.png"
+                                     alt="Plug and Play"
+                                     width="2048"
+                                     height="580">
+                            </span>
+                        </a>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             ÜBER MICH
+        ========================================================== -->
+        <section id="ueber-mich" class="section section-soft about" data-section>
+            <div class="container about-grid">
+                <div class="profile-panel" data-reveal>
+                    <img class="profile-photo"
+                         src="images/profil.jpg"
+                         alt="Der Energieberater auf dem Fahrrad"
+                         width="2048"
+                         height="1365"
+                         decoding="async">
+                    <div class="profile-photo-shade" aria-hidden="true"></div>
+                    <div class="profile-content">
+                        <p>Ihr Ansprechpartner</p>
+                        <h3>Jerry Becker</h3>
+                        <ul>
+                            <li>Wirtschaftsingenieur B.ENG</li>
+                            <li>Gebäudeenergieberater (HWK)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <p class="eyebrow" data-reveal>Über mich</p>
+                    <h2 data-reveal>Technische Tiefe. Wirtschaftlicher Blick. Persönliche Beratung.</h2>
+                    <p data-reveal>
+                        Als Wirtschaftsingenieur mit Fortbildung zum Gebäudeenergieberater (HWK)
+                        verbinde ich technische Gebäudeanalyse mit wirtschaftlicher
+                        Entscheidungsunterstützung.
+                    </p>
+                    <p data-reveal>
+                        Mein Anspruch ist, aus komplexen Anforderungen eine klare und realistische
+                        Vorgehensweise zu entwickeln. Dabei stehen die Situation Ihres Gebäudes,
+                        Ihre Ziele und eine nachvollziehbare Umsetzung im Mittelpunkt.
+                    </p>
+
+                    <blockquote data-reveal>
+                        „Eine gute Sanierungsentscheidung beginnt nicht mit einem Produkt,
+                        sondern mit einem belastbaren Verständnis des Gebäudes.“
+                    </blockquote>
+
+                    <a href="#kontakt" class="text-link" data-reveal>
+                        Unverbindlich kennenlernen
+                        <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             KONTAKT
+        ========================================================== -->
+        <section id="kontakt" class="section contact" data-section>
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <p class="eyebrow" data-reveal>Kontakt</p>
+                    <h2 data-reveal>Welches Energieprojekt möchten Sie als Nächstes angehen?</h2>
+                    <p data-reveal>
+                        Beschreiben Sie kurz Ihr Gebäude und Ihre aktuelle Fragestellung.
+                        Im Erstkontakt klären wir, welche Beratungsleistung sinnvoll ist und
+                        welche Unterlagen bereits hilfreich sind.
+                    </p>
+
+                    <!-- TODO: Kontaktangaben vor Veröffentlichung ersetzen. -->
+                    <div class="contact-details" data-reveal>
+                        <a href="mailto:jbecker2603@gmail.com">
+                            <svg aria-hidden="true"><use href="#icon-mail"></use></svg>
+                            <span>
+                                <small>E-Mail</small>
+                                <strong>jbecker@gmail.com</strong>
+                            </span>
+                        </a>
+                        <a href="tel:+49 15142022440">
+                            <svg aria-hidden="true"><use href="#icon-phone"></use></svg>
+                            <span>
+                                <small>Telefon</small>
+                                <strong>+49 (0) 151 420 22 44 0</strong>
+                            </span>
+                        </a>
+                        <div>
+                            <svg aria-hidden="true"><use href="#icon-pin"></use></svg>
+                            <span>
+                                <small>Einsatzgebiet</small>
+                                <strong>Schleswig-Holstein</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    Dieses statische Formular öffnet das lokale E-Mail-Programm.
+                    Für echten Versand ohne E-Mail-Programm ist ein Formular-Backend erforderlich.
+                    TODO: data-recipient anpassen.
+                -->
+                <form class="contact-form"
+                      data-contact-form
+                      data-recipient="kontakt@skywalker-energie.de"
+                      data-reveal>
+                    <div class="form-row">
+                        <label>
+                            <span>Name *</span>
+                            <input type="text" name="name" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span>E-Mail *</span>
+                            <input type="email" name="email" autocomplete="email" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Telefon</span>
+                            <input type="tel" name="phone" autocomplete="tel">
+                        </label>
+                        <label>
+                            <span>Postleitzahl</span>
+                            <input type="text" name="postalCode" inputmode="numeric" autocomplete="postal-code">
+                        </label>
+                    </div>
+
+                    <label>
+                        <span>Worum geht es? *</span>
+                        <select name="service" required>
+                            <option value="">Bitte auswählen</option>
+                            <option>Allgemeine Energieberatung</option>
+                            <option>Individueller Sanierungsfahrplan (iSFP)</option>
+                            <option>Energieausweis</option>
+                            <option>Fördermittelbegleitung</option>
+                            <option>Quartiersanalysen</option>
+                            <option>Sonstiges</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Ihre Nachricht *</span>
+                        <textarea name="message" rows="6" required
+                                  placeholder="Gebäudetyp, Baujahr, aktuelle Heizung und Ihre wichtigste Frage ..."></textarea>
+                    </label>
+
+                    <label class="privacy-check">
+                        <input type="checkbox" name="privacy" required>
+                        <span>
+                            Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen
+                            und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu. *
+                        </span>
+                    </label>
+
+                    <button type="submit" class="button button-primary form-submit">
+                        Anfrage vorbereiten
+                        <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
+                    </button>
+
+                    <p class="form-hint">
+                        Das Formular öffnet Ihr E-Mail-Programm. Es werden über diese Website
+                        keine Formulardaten gespeichert.
+                    </p>
+                    <p class="form-status" data-form-status aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="#home" class="brand consultancy-brand footer-brand" aria-label="Energieberatung für Wohngebäude – nach oben">
+                    <img class="consultancy-brand-icon"
+                         src="images/energieberatung-label.svg"
+                         alt=""
+                         width="64"
+                         height="64"
+                         loading="lazy"
+                         decoding="async">
+                    <span class="consultancy-brand-text">
+                        <strong>Energieberatung</strong>
+                        <span>für Wohngebäude</span>
+                    </span>
+                </a>
+                <p>Energieberatung für zukunftsfähige Wohngebäude.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#leistungen">Leistungen</a>
+                <a href="#innovation">Innovation</a>
+                <a href="#kontakt">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+
+            <p class="copyright">© <span data-current-year></span> Energieberatung für Wohngebäude</p>
+        </div>
+    </footer>
+
+    <a class="back-to-top" href="#home" aria-label="Nach oben" data-back-to-top>↑</a>
+</body>
+</html>
