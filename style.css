@@ -3865,7 +3865,64 @@ body.nav-open .hero-particle-field {
 .hidden {
     display: none;
 }
+/* ==========================================================
+   MOBILE NAVIGATION – FINAL FIX
+   ========================================================== */
 
+/* Desktop: definierter Abstand zwischen Marke und Navigation */
+.nav-left {
+    gap: 32px;
+}
+
+
+/* Mobile */
+@media (max-width: 960px) {
+
+    /* Die linken Desktop-Menüpunkte werden ausgeblendet */
+    .nav-links-left {
+        display: none;
+    }
+
+    /* Logo und Hamburger sauber auseinander */
+    .navbar {
+        gap: 16px;
+    }
+
+    .nav-left {
+        gap: 0;
+        min-width: 0;
+    }
+
+    /* Hamburger bleibt rechts */
+    .nav-toggle {
+        flex: 0 0 48px;
+        margin-left: auto;
+    }
+
+    /* Mobile Menü */
+    .nav-panel {
+        gap: 20px;
+    }
+
+    /* Beide Navigationen im geöffneten Menü */
+    .nav-links-left,
+    .nav-links-right {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links-right {
+        display: grid;
+        gap: 4px;
+    }
+
+    .nav-links-right a {
+        display: block;
+        padding: 15px 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 1.05rem;
+    }
+}
 /* ==========================================================
    FLOATING WHATSAPP BUTTON – MOBILE
    ========================================================== */
