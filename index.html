@@ -90,59 +90,83 @@
    <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Hauptnavigation">
 
-        <!-- Linke Seite -->
-        <div class="nav-left">
-            <a href="#home" class="brand consultancy-brand">
-                <img class="consultancy-brand-icon"
-                     src="images/energieberatung-label.svg"
-                     alt=""
-                     width="64"
-                     height="64">
+    <!-- Linke Seite / Desktop -->
+    <div class="nav-left">
 
-                <span class="consultancy-brand-text">
-                    <strong>Energieberatung</strong>
-                    <span>für Wohngebäude</span>
-                </span>
-            </a>
+        <a href="#home" class="brand consultancy-brand">
+            <img class="consultancy-brand-icon"
+                 src="images/energieberatung-label.svg"
+                 alt=""
+                 width="64"
+                 height="64">
 
-            <ul class="nav-links-left">
-                <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#ablauf">Ablauf</a></li>
-            </ul>
-        </div>
+            <span class="consultancy-brand-text">
+                <strong>Energieberatung</strong>
+                <span>für Wohngebäude</span>
+            </span>
+        </a>
 
-        <!-- Mobile Button -->
-        <button class="nav-toggle" type="button"
-                aria-expanded="false"
-                aria-controls="nav-panel"
-                data-nav-toggle>
-            <span class="sr-only">Navigation öffnen</span>
-            <span></span><span></span><span></span>
-        </button>
+        <!-- Desktop: Leistungen + Ablauf -->
+        <ul class="nav-links-left">
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ablauf">Ablauf</a></li>
+        </ul>
 
-        <!-- Mobile / rechte Seite -->
-<div class="nav-panel" id="nav-panel" data-nav-panel>
+    </div>
 
+
+    <!-- Mobile Button -->
+    <button class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-panel"
+            data-nav-toggle>
+
+        <span class="sr-only">Navigation öffnen</span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <!-- Rechte Seite / Desktop + Mobile Menü -->
+   <div class="nav-panel" id="nav-panel" data-nav-panel>
+
+    <!-- Mobile Navigation -->
     <ul class="mobile-nav-links">
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#ueber-mich">Über mich</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li>
+            <a href="#innovation">Innovation</a>
+        </li>
+    </ul>
 
+    <!-- Desktop Navigation -->
+    <ul class="nav-links-right">
         <li class="nav-innovation-item">
             <a href="#innovation" class="nav-innovation-brand">
-                <img src="images/logo_skywalker.png" alt="Skywalker Energie">
+                <img src="images/logo_skywalker.png"
+                     alt="Skywalker Energie">
                 <span class="nav-innovation-label"></span>
             </a>
         </li>
 
-        <li><a href="#ueber-mich">Über mich</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li>
+            <a href="#ueber-mich">Über mich</a>
+        </li>
+
+        <li>
+            <a href="#kontakt">Kontakt</a>
+        </li>
     </ul>
 
     <a href="#kontakt" class="nav-cta">Erstgespräch</a>
 
 </div>
-
-    </nav>
+</nav>
 
     <div class="scroll-progress">
         <span data-scroll-progress></span>

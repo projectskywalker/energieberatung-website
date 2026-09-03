@@ -4138,3 +4138,20 @@ body.nav-open .hero-particle-field {
         gap: 24px;
     }
 }
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 960px) {
+
+    /* Desktop-Leistungen/Ablauf ausblenden */
+    .nav-links-left {
+        display: none;
+    }
+
+    /* Diese beiden Punkte nur im geöffneten Mobile-Menü anzeigen */
+    .mobile-only {
+        display: list-item;
+    }
+
+}
