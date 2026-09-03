@@ -3977,3 +3977,128 @@ body.nav-open .hero-particle-field {
         fill: currentColor;
     }
 }
+/* =========================================================
+   MOBILE HERO – Fullscreen Einstieg
+   Desktop bleibt unverändert
+   ========================================================= */
+
+@media (max-width: 960px) {
+
+    /* Hero nimmt zunächst den kompletten mobilen Bildschirm ein */
+    .hero {
+        position: relative;
+        min-height: 100svh;
+        height: 100svh;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Bild als komplette Fläche */
+    .hero-grid {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 100svh;
+    }
+
+    .hero-visual {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        z-index: 1;
+    }
+
+    .hero-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* Dunkler Verlauf unten – damit der Button gut lesbar bleibt */
+    .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.08) 0%,
+                rgba(0,0,0,0.02) 45%,
+                rgba(0,0,0,0.58) 100%
+            );
+        pointer-events: none;
+    }
+
+    /* Hero-Text liegt über dem Bild */
+    .hero-copy {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        width: 100%;
+        max-width: none;
+        padding: 0 24px 42px;
+        box-sizing: border-box;
+    }
+
+    /* Beim ersten Öffnen auf Mobile nur der CTA */
+    .hero-copy > *:not(.hero-actions) {
+        display: none;
+    }
+
+    /* Nur primären CTA zeigen */
+    .hero-actions {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero-actions .btn-secondary {
+        display: none;
+    }
+
+    .hero-actions .btn-primary {
+        width: auto;
+        min-width: 230px;
+        justify-content: center;
+        text-align: center;
+
+        padding: 15px 24px;
+
+        font-size: 0.95rem;
+        font-weight: 600;
+
+        border-radius: 999px;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
+@media (max-width: 960px) {
+
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+        background: transparent;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .navbar {
+        background: transparent;
+    }
+
+}
