@@ -112,44 +112,35 @@
         </div>
 
         <!-- Mobile Button -->
-        <div class="nav-panel" id="mobileMenu">
+        <button class="nav-toggle" type="button"
+                aria-expanded="false"
+                aria-controls="nav-panel"
+                data-nav-toggle>
+            <span class="sr-only">Navigation öffnen</span>
+            <span></span><span></span><span></span>
+        </button>
 
-    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <!-- Mobile / rechte Seite -->
+<div class="nav-panel" id="nav-panel" data-nav-panel>
 
-        <a href="#leistungen">Leistungen</a>
+    <ul class="mobile-nav-links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
 
-        <a href="#ablauf">Ablauf</a>
+        <li class="nav-innovation-item">
+            <a href="#innovation" class="nav-innovation-brand">
+                <img src="images/logo_skywalker.png" alt="Skywalker Energie">
+                <span class="nav-innovation-label"></span>
+            </a>
+        </li>
 
-        <a href="#ueber-mich">Über mich</a>
+        <li><a href="#ueber-mich">Über mich</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
 
-        <a href="#kontakt">Kontakt</a>
-
-    </nav>
-
-    <a href="#kontakt" class="nav-cta">
-        Erstgespräch vereinbaren
-    </a>
+    <a href="#kontakt" class="nav-cta">Erstgespräch</a>
 
 </div>
-
-        <!-- Rechte Seite -->
-        <div class="nav-panel" id="nav-panel" data-nav-panel>
-
-            <ul class="nav-links-right">
-                <li class="nav-innovation-item">
-                    <a href="#innovation" class="nav-innovation-brand">
-                        <img src="images/logo_skywalker.png" alt="Skywalker Energie">
-                        <span class="nav-innovation-label"></span>
-                    </a>
-                </li>
-
-                <li><a href="#ueber-mich">Über mich</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-
-            <a href="#kontakt" class="nav-cta">Erstgespräch</a>
-
-        </div>
 
     </nav>
 
