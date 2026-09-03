@@ -4155,3 +4155,46 @@ body.nav-open .hero-particle-field {
     }
 
 }
+/* Mobile Navigation standardmäßig verstecken */
+.mobile-nav-links {
+    display: none;
+}
+
+@media (max-width: 960px) {
+
+    /* Desktop-Navigation im Panel verstecken */
+    .nav-links-right {
+        display: none;
+    }
+
+    /* Mobile-Navigation anzeigen */
+    .mobile-nav-links {
+        display: grid;
+        gap: 0;
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-nav-links li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-nav-links a {
+        display: block;
+        padding: 16px 4px;
+
+        text-decoration: none;
+        color: inherit;
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Leistungen + Ablauf links neben dem Logo
+       auf Mobile ausblenden */
+    .nav-links-left {
+        display: none;
+    }
+}
