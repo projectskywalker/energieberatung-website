@@ -4101,3 +4101,40 @@ body.nav-open .hero-particle-field {
     }
 
 }
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 960px) {
+
+    .mobile-nav-links {
+        display: grid;
+        gap: 0;
+        width: 100%;
+    }
+
+    .mobile-nav-links a {
+        display: block;
+        padding: 16px 4px;
+
+        color: inherit;
+        text-decoration: none;
+
+        font-size: 1.05rem;
+        font-weight: 500;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        transition:
+            color 0.2s ease,
+            padding-left 0.2s ease;
+    }
+
+    .mobile-nav-links a:hover {
+        padding-left: 8px;
+    }
+
+    .nav-panel {
+        gap: 24px;
+    }
+}
