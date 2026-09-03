@@ -4083,22 +4083,3 @@ body.nav-open .hero-particle-field {
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
     }
-}
-@media (max-width: 960px) {
-
-    .site-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-
-        background: transparent;
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .navbar {
-        background: transparent;
-    }
-
-}
