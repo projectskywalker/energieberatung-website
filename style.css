@@ -4033,7 +4033,7 @@ body.nav-open .hero-particle-field {
             );
         pointer-events: none;
     }
-}
+
     /* Hero-Text liegt über dem Bild */
     .hero-copy {
         position: absolute;
@@ -4082,6 +4082,7 @@ body.nav-open .hero-particle-field {
 
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
+    }
     }
     @media (max-width: 960px) {
 
