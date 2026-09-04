@@ -20,6 +20,38 @@
         document.documentElement.classList.add("js");
     </script>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================================
+           MOBILE ANPASSUNGEN
+        ========================================================== */
+        .mobile-funding-button {
+            display: none;
+        }
+
+        @media (max-width: 960px) {
+            /* Erstgespräch nur auf Desktop anzeigen */
+            .desktop-consultation-button {
+                display: none !important;
+            }
+
+            /* Mobile Hero: direkte Förderung statt Erstberatung */
+            .mobile-funding-button {
+                display: inline-flex;
+            }
+
+            /* Abstand zwischen CTA und Hero-Bild reduzieren */
+            .hero-visual {
+                margin-top: 8px;
+            }
+
+            /* Erstgespräch aus dem mobilen Menü entfernen */
+            .nav-cta {
+                display: none !important;
+            }
+        }
+    </style>
+
     <script src="script.js" defer></script>
 </head>
 
@@ -90,85 +122,56 @@
    <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Hauptnavigation">
 
-    <!-- Linke Seite / Desktop -->
-    <div class="nav-left">
+        <!-- Linke Seite -->
+        <div class="nav-left">
+            <a href="#home" class="brand consultancy-brand">
+                <img class="consultancy-brand-icon"
+                     src="images/energieberatung-label.svg"
+                     alt=""
+                     width="64"
+                     height="64">
 
-        <a href="#home" class="brand consultancy-brand">
-            <img class="consultancy-brand-icon"
-                 src="images/energieberatung-label.svg"
-                 alt=""
-                 width="64"
-                 height="64">
-
-            <span class="consultancy-brand-text">
-                <strong>Energieberatung</strong>
-                <span>für Wohngebäude</span>
-            </span>
-        </a>
-
-        <!-- Desktop: Leistungen + Ablauf -->
-        <ul class="nav-links-left">
-            <li><a href="#leistungen">Leistungen</a></li>
-            <li><a href="#ablauf">Ablauf</a></li>
-        </ul>
-
-    </div>
-
-
-    <!-- Mobile Button -->
-    <button class="nav-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="nav-panel"
-            data-nav-toggle>
-
-        <span class="sr-only">Navigation öffnen</span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </button>
-
-
-    <!-- Rechte Seite / Desktop + Mobile Menü -->
-   <div class="nav-panel" id="nav-panel" data-nav-panel>
-
-    <!-- MOBILE NAVIGATION -->
-    <ul class="mobile-nav-links">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#ablauf">Ablauf</a></li>
-        <li><a href="#ueber-mich">Über mich</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="#innovation">Innovation</a></li>
-    </ul>
-
-    <!-- DESKTOP NAVIGATION -->
-    <ul class="nav-links-right">
-
-        <li class="nav-innovation-item">
-            <a href="#innovation" class="nav-innovation-brand">
-                <img src="images/logo_skywalker.png"
-                     alt="Skywalker Energie">
-                <span class="nav-innovation-label"></span>
+                <span class="consultancy-brand-text">
+                    <strong>Energieberatung</strong>
+                    <span>für Wohngebäude</span>
+                </span>
             </a>
-        </li>
 
-        <li>
-            <a href="#ueber-mich">Über mich</a>
-        </li>
+            <ul class="nav-links-left">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+            </ul>
+        </div>
 
-        <li>
-            <a href="#kontakt">Kontakt</a>
-        </li>
+        <!-- Mobile Button -->
+        <button class="nav-toggle" type="button"
+                aria-expanded="false"
+                aria-controls="nav-panel"
+                data-nav-toggle>
+            <span class="sr-only">Navigation öffnen</span>
+            <span></span><span></span><span></span>
+        </button>
 
-    </ul>
+        <!-- Rechte Seite -->
+        <div class="nav-panel" id="nav-panel" data-nav-panel>
 
-    <a href="#kontakt" class="nav-cta">
-        Erstgespräch
-    </a>
+            <ul class="nav-links-right">
+                <li class="nav-innovation-item">
+                    <a href="#innovation" class="nav-innovation-brand">
+                        <img src="images/logo_skywalker.png" alt="Skywalker Energie">
+                        <span class="nav-innovation-label"></span>
+                    </a>
+                </li>
 
-</div>
-</nav>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+
+            <a href="#kontakt" class="nav-cta">Erstgespräch</a>
+
+        </div>
+
+    </nav>
 
     <div class="scroll-progress">
         <span data-scroll-progress></span>
@@ -208,7 +211,8 @@
                             Leistungen entdecken
                             <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
                         </a>
-                        <a href="#kontakt" class="button button-outline">Erstberatung vereinbaren</a>
+                        <a href="#kontakt" class="button button-outline desktop-consultation-button">Erstberatung vereinbaren</a>
+                        <a href="#beg-em" class="button button-outline mobile-funding-button">Förderung</a>
                     </div>
 
                     <div class="hero-credentials" data-reveal aria-label="Qualifikationen und Fokus">
@@ -287,18 +291,19 @@
                         </ul>
                     </article>
 
-                    <article class="service-card" data-reveal>
+                    <article class="service-card" id="beg-em" data-reveal>
                         <div class="service-icon"><svg><use href="#icon-funding"></use></svg></div>
                         <span class="service-number">03</span>
-                        <h3>Energieausweis</h3>
+                        <h3>BEG EM-Förderung</h3>
                         <p>
-                            Erstellung von Energieausweisen für den Verkauf von Wohngebäuden.
-                            Energieverbräuche überwachen. Energiemanagement für Ihr Zuhause.
+                            Energetische Sanierungsmaßnahmen gezielt planen und passende
+                            Fördermöglichkeiten der Bundesförderung für effiziente Gebäude –
+                            Einzelmaßnahmen (BEG EM) berücksichtigen.
                         </p>
                         <ul class="check-list">
-                            <li>Energiebedarfsausweis</li>
-                            <li>Energieverbrauchsausweis</li>
-                            <li>Energiecontrolling</li>
+                            <li>Fördermöglichkeiten prüfen</li>
+                            <li>Maßnahmen technisch einordnen</li>
+                            <li>Förderung sinnvoll integrieren</li>
                         </ul>
                     </article>
 <!--
@@ -909,6 +914,7 @@
                             <option>Allgemeine Energieberatung</option>
                             <option>Individueller Sanierungsfahrplan (iSFP)</option>
                             <option>Energieausweis</option>
+                            <option>BEG EM-Förderung</option>
                             <option>Fördermittelbegleitung</option>
                             <option>Quartiersanalysen</option>
                             <option>Sonstiges</option>
@@ -975,18 +981,6 @@
         </div>
     </footer>
 
-   <a
-    href="https://wa.me/4915142022440"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Kontakt über WhatsApp aufnehmen"
-    title="WhatsApp kontaktieren"
-    >
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.45 1.65 6.32L3 29l6.86-1.8A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Z"/>
-        <path d="M11.3 9.8c-.25-.55-.5-.56-.73-.57h-.62c-.22 0-.58.08-.88.4-.3.33-1.15 1.12-1.15 2.73s1.18 3.16 1.34 3.38c.17.22 2.32 3.54 5.63 4.97.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.1 1.94-.79 2.21-1.55.27-.76.27-1.41.19-1.55-.08-.14-.3-.22-.63-.38-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.39.25-.72.08-.33-.16-1.39-.51-2.65-1.64-.98-.88-1.64-1.97-1.83-2.3-.19-.33-.02-.5.14-.66.14-.14.33-.36.49-.55.16-.18.22-.31.33-.52.11-.22.05-.41-.03-.58l-.73-1.76Z"/>
-    </svg>
-</a>
+    <a class="back-to-top" href="#home" aria-label="Nach oben" data-back-to-top>↑</a>
 </body>
 </html>
