@@ -4155,22 +4155,31 @@ body.nav-open .hero-particle-field {
     }
 
 }
-/* Mobile Navigation standardmäßig verstecken */
+/* Mobile Navigation standardmäßig ausblenden */
 .mobile-nav-links {
     display: none;
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 960px) {
 
-    /* Desktop-Navigation im Panel verstecken */
+    /* Desktop-Navigation ausblenden */
+    .nav-links-left {
+        display: none;
+    }
+
     .nav-links-right {
         display: none;
     }
 
-    /* Mobile-Navigation anzeigen */
+    /* Mobile Navigation anzeigen */
     .mobile-nav-links {
-        display: grid;
-        gap: 0;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         list-style: none;
         margin: 0;
@@ -4184,18 +4193,8 @@ body.nav-open .hero-particle-field {
 
     .mobile-nav-links a {
         display: block;
-        padding: 16px 4px;
-
+        padding: 16px 0;
         text-decoration: none;
-        color: inherit;
-
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-
-    /* Leistungen + Ablauf links neben dem Logo
-       auf Mobile ausblenden */
-    .nav-links-left {
-        display: none;
-    }
-}
 }
