@@ -4105,57 +4105,6 @@ body.nav-open .hero-particle-field {
    MOBILE NAVIGATION
    ========================================================= */
 
-@media (max-width: 960px) {
-
-    .mobile-nav-links {
-        display: grid;
-        gap: 0;
-        width: 100%;
-    }
-
-    .mobile-nav-links a {
-        display: block;
-        padding: 16px 4px;
-
-        color: inherit;
-        text-decoration: none;
-
-        font-size: 1.05rem;
-        font-weight: 500;
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-        transition:
-            color 0.2s ease,
-            padding-left 0.2s ease;
-    }
-
-    .mobile-nav-links a:hover {
-        padding-left: 8px;
-    }
-
-    .nav-panel {
-        gap: 24px;
-    }
-}
-.mobile-only {
-    display: none;
-}
-
-@media (max-width: 960px) {
-
-    /* Desktop-Leistungen/Ablauf ausblenden */
-    .nav-links-left {
-        display: none;
-    }
-
-    /* Diese beiden Punkte nur im geöffneten Mobile-Menü anzeigen */
-    .mobile-only {
-        display: list-item;
-    }
-
-}
-/* Mobile Navigation standardmäßig ausblenden */
 .mobile-nav-links {
     display: none;
 }
@@ -4167,18 +4116,19 @@ body.nav-open .hero-particle-field {
 
 @media (max-width: 960px) {
 
-    /* Desktop-Navigation ausblenden */
+    /* Desktop-Navigation links ausblenden */
     .nav-links-left {
-        display: none;
+        display: none !important;
     }
 
+    /* Desktop-Navigation rechts ausblenden */
     .nav-links-right {
-        display: none;
+        display: none !important;
     }
 
     /* Mobile Navigation anzeigen */
     .mobile-nav-links {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         width: 100%;
         list-style: none;
@@ -4193,9 +4143,43 @@ body.nav-open .hero-particle-field {
 
     .mobile-nav-links a {
         display: block;
-        padding: 16px 0;
+        padding: 16px 4px;
+        color: inherit;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 1.05rem;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition:
+            color 0.2s ease,
+            padding-left 0.2s ease;
+    }
+
+    .mobile-nav-links a:hover {
+        padding-left: 8px;
+    }
+
+    .nav-panel {
+        gap: 24px;
+    }
+}
+
+
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media (min-width: 961px) {
+
+    .mobile-nav-links {
+        display: none !important;
+    }
+
+    .nav-links-left {
+        display: flex;
+    }
+
+    .nav-links-right {
+        display: flex;
     }
 }
 }
