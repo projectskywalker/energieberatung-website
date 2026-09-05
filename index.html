@@ -29,6 +29,10 @@
             display: none;
         }
 
+        .mobile-nav-links {
+            display: none;
+        }
+
         @media (max-width: 960px) {
             /* Erstgespräch nur auf Desktop anzeigen */
             .desktop-consultation-button {
@@ -45,8 +49,40 @@
                 margin-top: 8px;
             }
 
-            /* Erstgespräch aus dem mobilen Menü entfernen */
+            /* Mobile Navigation anzeigen */
+            .mobile-nav-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 0;
+            }
+
+            .mobile-nav-links li {
+                margin: 0;
+                padding: 0;
+            }
+
+            .mobile-nav-links a {
+                display: block;
+                padding: 16px 4px;
+                color: inherit;
+                text-decoration: none;
+                font-size: 1.05rem;
+                font-weight: 500;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            /* Desktop-Navigation im Mobile-Menü ausblenden */
+            .nav-links-right,
             .nav-cta {
+                display: none !important;
+            }
+
+            /* Erstgespräch bleibt auf Mobile ausgeblendet */
+            .desktop-consultation-button {
                 display: none !important;
             }
         }
@@ -155,6 +191,16 @@
         <!-- Rechte Seite -->
         <div class="nav-panel" id="nav-panel" data-nav-panel>
 
+            <!-- MOBILE NAVIGATION -->
+            <ul class="mobile-nav-links">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+            </ul>
+
+            <!-- DESKTOP NAVIGATION -->
             <ul class="nav-links-right">
                 <li class="nav-innovation-item">
                     <a href="#innovation" class="nav-innovation-brand">
