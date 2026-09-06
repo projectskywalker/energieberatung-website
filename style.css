@@ -1475,7 +1475,7 @@ section {
     transform:translateY(0);
 }
 
-pitch deck */
+/* pitch deck */
 
 .pitchdeck {
     overflow: hidden;
@@ -3866,24 +3866,44 @@ body.nav-open .hero-particle-field {
     display: none;
 }
 /* ==========================================================
-   MOBILE NAVIGATION – FINAL FIX
+   MOBILE – FINAL CLEAN VERSION
+   Desktop bleibt unverändert
    ========================================================== */
 
-/* Desktop: definierter Abstand zwischen Marke und Navigation */
-.nav-left {
-    gap: 32px;
+
+/* ==========================================================
+   MOBILE NAVIGATION
+   ========================================================== */
+
+.mobile-nav-links {
+    display: none;
 }
 
 
-/* Mobile */
-@media (max-width: 960px) {
+/* Desktop */
+@media (min-width: 961px) {
 
-    /* Die linken Desktop-Menüpunkte werden ausgeblendet */
-    .nav-links-left {
-        display: none;
+    .mobile-nav-links {
+        display: none !important;
     }
 
-    /* Logo und Hamburger sauber auseinander */
+    .mobile-funding-button {
+        display: none !important;
+    }
+
+    .desktop-consultation-button {
+        display: inline-flex;
+    }
+}
+
+
+/* Mobile / Tablet */
+@media (max-width: 960px) {
+
+    /* ------------------------------------------
+       HEADER
+       ------------------------------------------ */
+
     .navbar {
         gap: 16px;
     }
@@ -3893,275 +3913,453 @@ body.nav-open .hero-particle-field {
         min-width: 0;
     }
 
-    /* Hamburger bleibt rechts */
+    /* Desktop-Navigation ausblenden */
+    .nav-links-left,
+    .nav-links-right {
+        display: none !important;
+    }
+
+    /* Hamburger */
     .nav-toggle {
+        display: block !important;
         flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
         margin-left: auto;
     }
 
-    /* Mobile Menü */
+
+    /* ------------------------------------------
+       MOBILE MENÜ
+       ------------------------------------------ */
+
     .nav-panel {
-        gap: 20px;
-    }
-
-    /* Beide Navigationen im geöffneten Menü */
-    .nav-links-left,
-    .nav-links-right {
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-links-right {
-        display: grid;
-        gap: 4px;
-    }
-
-    .nav-links-right a {
-        display: block;
-        padding: 15px 4px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        font-size: 1.05rem;
-    }
-}
-/* ==========================================================
-   FLOATING WHATSAPP BUTTON – MOBILE
-   ========================================================== */
-
-.whatsapp-float {
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    .whatsapp-float {
         position: fixed;
+        top: var(--header-height);
+        right: 0;
+        left: 0;
 
-        right: 20px;
-        bottom: 20px;
+        display: grid !important;
+        align-content: start;
 
-        width: 58px;
-        height: 58px;
+        width: 100%;
+        max-height: calc(100vh - var(--header-height));
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        gap: 24px;
 
-        background: #25D366;
-        color: #ffffff;
+        overflow-y: auto;
 
-        border-radius: 50%;
+        padding: 24px 24px 32px;
 
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
 
-        z-index: 9999;
+        background: rgba(3, 10, 19, 0.97);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-14px);
 
         transition:
+            opacity 0.25s ease,
             transform 0.25s ease,
-            box-shadow 0.25s ease;
+            visibility 0.25s ease;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        z-index: 9998;
     }
 
-    .whatsapp-float:hover {
-        transform: translateY(-3px) scale(1.05);
 
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+    /* Menü geöffnet */
+    .nav-panel.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
-    .whatsapp-float:active {
-        transform: scale(0.95);
-    }
 
-    .whatsapp-float svg {
-        width: 30px;
-        height: 30px;
-
-        fill: currentColor;
-    }
-}
-/* =========================================================
-   MOBILE HERO – Fullscreen Einstieg
-   Desktop bleibt unverändert
-   ========================================================= */
-
-@media (max-width: 960px) {
-
-    /* Hero nimmt zunächst den kompletten mobilen Bildschirm ein */
-    .hero {
-        position: relative;
-        min-height: 100svh;
-        height: 100svh;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    /* Bild als komplette Fläche */
-    .hero-grid {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        min-height: 100svh;
-    }
-
-    .hero-visual {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        z-index: 1;
-    }
-
-    .hero-visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-    }
-
-    /* Dunkler Verlauf unten – damit der Button gut lesbar bleibt */
-    .hero-visual::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(0,0,0,0.08) 0%,
-                rgba(0,0,0,0.02) 45%,
-                rgba(0,0,0,0.58) 100%
-            );
-        pointer-events: none;
-    }
-
-    /* Hero-Text liegt über dem Bild */
-    .hero-copy {
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-
-        width: 100%;
-        max-width: none;
-        padding: 0 24px 42px;
-        box-sizing: border-box;
-    }
-
-    /* Beim ersten Öffnen auf Mobile nur der CTA */
-    .hero-copy > *:not(.hero-actions) {
-        display: none;
-    }
-
-    /* Nur primären CTA zeigen */
-    .hero-actions {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-    }
-
-    .hero-actions .btn-secondary {
-        display: none;
-    }
-
-    .hero-actions .btn-primary {
-        width: auto;
-        min-width: 230px;
-        justify-content: center;
-        text-align: center;
-
-        padding: 15px 24px;
-
-        font-size: 0.95rem;
-        font-weight: 600;
-
-        border-radius: 999px;
-
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-    }
-    }
-    @media (max-width: 960px) {
-
-    .site-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-
-        background: transparent;
-        border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .navbar {
-        background: transparent;
-    }
-
-}
-/* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
-
-.mobile-nav-links {
-    display: none;
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 960px) {
-
-    /* Desktop-Navigation links ausblenden */
-    .nav-links-left {
-        display: none !important;
-    }
-
-    /* Desktop-Navigation rechts ausblenden */
-    .nav-links-right {
-        display: none !important;
-    }
-
-    /* Mobile Navigation anzeigen */
+    /* Mobile Links */
     .mobile-nav-links {
         display: flex !important;
+
         flex-direction: column;
+
         width: 100%;
-        list-style: none;
+
         margin: 0;
         padding: 0;
+
+        list-style: none;
     }
+
 
     .mobile-nav-links li {
         margin: 0;
         padding: 0;
     }
 
+
     .mobile-nav-links a {
         display: block;
-        padding: 16px 4px;
+
+        padding: 15px 4px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
         color: inherit;
         text-decoration: none;
+
         font-size: 1.05rem;
-        font-weight: 500;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        transition:
-            color 0.2s ease,
-            padding-left 0.2s ease;
+        font-weight: 600;
     }
+
 
     .mobile-nav-links a:hover {
-        padding-left: 8px;
+        color: var(--accent);
     }
 
-    .nav-panel {
-        gap: 24px;
+
+    /* Erstgespräch aus dem mobilen Menü entfernen */
+    .nav-panel .nav-cta {
+        display: none !important;
     }
+
+
+    /* ------------------------------------------
+       ÜBER MICH
+       Text zuerst – Bild danach
+       ------------------------------------------ */
+
+    .about-grid {
+        display: flex !important;
+
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    .about-copy {
+        order: 1;
+    }
+
+
+    .profile-panel {
+        order: 2;
+    }
+
+
+    /* ------------------------------------------
+       MOBILE HERO
+       ------------------------------------------ */
+
+    .hero {
+        position: relative;
+
+        width: 100%;
+        height: 100svh;
+        min-height: 100svh;
+
+        padding: 0 !important;
+
+        overflow: hidden;
+    }
+
+
+    .hero-grid {
+        position: relative;
+
+        display: block !important;
+
+        width: 100%;
+        height: 100%;
+        min-height: 100svh;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* Hero-Bild als komplette Fläche */
+    .hero-visual {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        margin: 0 !important;
+
+        z-index: 1;
+    }
+
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+
+        border: 0;
+        border-radius: 0;
+    }
+
+
+    .hero-image img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        min-height: 100% !important;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    /* Dunkler Verlauf über dem Bild */
+    .hero-visual::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.02) 45%,
+                rgba(0, 0, 0, 0.62) 100%
+            );
+
+        pointer-events: none;
+    }
+
+
+    /* ------------------------------------------
+       HERO TEXT MOBILE
+       ------------------------------------------ */
+
+    .hero-copy {
+        position: absolute;
+
+        inset: 0;
+
+        z-index: 4;
+
+        display: flex !important;
+
+        flex-direction: column;
+        justify-content: flex-end;
+
+        width: 100%;
+        max-width: none;
+
+        box-sizing: border-box;
+
+        padding:
+            0
+            20px
+            32px !important;
+    }
+
+
+    /* Auf Mobile nur die Buttons */
+    .hero-copy > .eyebrow,
+    .hero-copy > h1,
+    .hero-copy > h2,
+    .hero-copy > .hero-lead,
+    .hero-copy > .hero-text,
+    .hero-copy > .hero-credentials {
+        display: none !important;
+    }
+
+
+    /* ------------------------------------------
+       HERO BUTTONS
+       ------------------------------------------ */
+
+    .hero-actions {
+        display: flex !important;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        gap: 10px;
+
+        margin: 0 !important;
+    }
+
+
+    .hero-actions .button {
+        flex: 1 1 0;
+
+        min-width: 0;
+        min-height: 50px;
+
+        padding:
+            0
+            14px;
+
+        font-size: 0.88rem;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+
+
+    /* Erstberatung auf Mobile ausblenden */
+    .desktop-consultation-button {
+        display: none !important;
+    }
+
+
+    /* Förderung auf Mobile anzeigen */
+    .mobile-funding-button {
+        display: inline-flex !important;
+    }
+
+}
+
+
+/* ==========================================================
+   WHATSAPP – MOBILE
+   ========================================================== */
+
+
+/* Desktop nicht anzeigen */
+.whatsapp-float {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .whatsapp-float {
+        position: fixed !important;
+
+        right: 18px !important;
+        bottom: 18px !important;
+
+        z-index: 99999 !important;
+
+        display: flex !important;
+
+        width: 58px !important;
+        height: 58px !important;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #25D366;
+        color: #ffffff;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.28);
+
+        text-decoration: none;
+
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    .whatsapp-float:hover {
+        transform: translateY(-3px) scale(1.05);
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.32);
+    }
+
+
+    .whatsapp-float:active {
+        transform: scale(0.95);
+    }
+
+
+    .whatsapp-float svg {
+        display: block;
+
+        width: 30px;
+        height: 30px;
+
+        fill: currentColor;
+    }
+
+}
+
+
+/* ==========================================================
+   SEHR KLEINE HANDYS
+   ========================================================== */
+
+@media (max-width: 440px) {
+
+    .hero-copy {
+        padding:
+            0
+            16px
+            24px !important;
+    }
+
+
+    .hero-actions {
+        gap: 8px;
+    }
+
+
+    .hero-actions .button {
+        min-height: 48px;
+
+        padding-inline: 10px;
+
+        font-size: 0.82rem;
+    }
+
+
+    .whatsapp-float {
+        right: 16px !important;
+        bottom: 16px !important;
+
+        width: 56px !important;
+        height: 56px !important;
+    }
+
+
+    .whatsapp-float svg {
+        width: 29px;
+        height: 29px;
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-panel {
+        transition: none;
+    }
+
+    .whatsapp-float {
+        transition: none;
+    }
+
 }
 
 
