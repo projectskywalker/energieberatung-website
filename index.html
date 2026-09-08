@@ -174,7 +174,7 @@
             </a>
 
             <ul class="nav-links-left">
-                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#beg-em">Förderung</a></li>
                 <li><a href="#ablauf">Ablauf</a></li>
             </ul>
         </div>
@@ -253,12 +253,18 @@
                     </p>
 
                     <div class="hero-actions" data-reveal>
-                        <a href="#leistungen" class="button button-primary">
+                        <a href="#leistungen" class="button button-primary mobile-services-button">
                             Leistungen entdecken
                             <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
                         </a>
                         <a href="#kontakt" class="button button-outline desktop-consultation-button">Erstberatung vereinbaren</a>
-                        <a href="#beg-em" class="button button-outline mobile-funding-button">Förderung</a>
+                        <img src="images/profile_head.jpg"
+                             class="mobile-profile-image"
+                             alt="Jerry Becker"
+                             width="64"
+                             height="64"
+                             loading="lazy">
+                        <a href="#beg-em" class="button button-primary mobile-funding-button">Förderung</a>
                     </div>
 
                     <div class="hero-credentials" data-reveal aria-label="Qualifikationen und Fokus">
@@ -541,6 +547,7 @@
                 <div class="innovation-intro">
                     <div>
                          <p class="eyebrow" data-reveal>Innovation</p>
+                         <br>
                         <div class="innovation-provider" data-reveal>
                             <span>Thermografische Quartiersanalysen</span>
                             <img src="images/logo_skywalker.png"
@@ -551,17 +558,19 @@
                                  decoding="async">
                         </div>
                        
-                        <h2 data-reveal>Wärme sichtbar machen.<br>Sanierung gezielt planen.</h2>
+                        <h2 data-reveal>Anreize zum Sanieren schaffen!</h2>
                     </div>
                     <div data-reveal>
                         <p>
-                            Thermografische Luftaufnahmen, Geodaten und KI-gestützte Auswertung
-                            verbinden wir zu einer verständlichen Datengrundlage für die energetische
-                            Quartiersplanung.
+                            Das Projekt Skywalker Energie hat einen technologiegestützten 
+                            Ansatz für die flächendeckende thermografische Erfassung und
+                            KI-assistierte Auswertung von Quartieren entwickelt.
                         </p>
                         <p>
-                            So werden thermische Auffälligkeiten sichtbar, Gebäude vergleichbar und
-                            Sanierungspotenziale gezielt priorisierbar – vom Quartier bis zum einzelnen Gebäude.
+                            Wärmebilddaten werden mit offen verfügbaren Geodaten und Gebäudekontext
+                            zusammengeführt. So entsteht eine verständliche Datengrundlage für
+                            Wärmekataster und individuelle Gebäudeauswertungen auf Basis der thermografischen 
+                            Luftaufnahmen und frei verfügbarer Daten.
                         </p>
                     </div>
                 </div>
@@ -571,16 +580,48 @@
                 </button>
                 <div id="innovation-details" class="innovation-details">
 
-                <div class="innovation-layout innovation-results-layout">
-                    <!-- PITCHDECK -->
-                    <article class="innovation-document-card" data-reveal>
-                        <div class="innovation-document-heading">
+                <div class="innovation-layout">
+                    <div class="innovation-features">
+                        <article class="innovation-feature" data-reveal>
+                            <span>01</span>
                             <div>
-                                <span class="innovation-document-kicker">01 · Konzept</span>
-                                <h3>Pitchdeck · Reduce Heat Demand</h3>
-                                <p>Das Konzept hinter der Technologie und der Entwicklung der thermografischen Quartiersanalyse.</p>
+                                <h3>Gemeinden & Kommunen</h3>
+                                <p>Wärmeplanung, Quartiersanalysen und Priorisierung energetischer Maßnahmen.</p>
                             </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>02</span>
+                            <div>
+                                <h3>Eigentumsgenossenschaften</h3>
+                                <p>Transparente Entscheidungsgrundlagen für Investitionen und Förderprogramme.</p>
+                            </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>03</span>
+                            <div>
+                                <h3>Ferienhaussiedlungen</h3>
+                                <p>Energieeffizienz bewerten und Schäden erkennen.</p>
+                            </div>
+                        </article>
+                        <article class="innovation-feature" data-reveal>
+                            <span>04</span>
+                            <div>
+                                <h3>Wohnungsbaugesellschaften</h3>
+                                <p>Sanierungsstrategien für große Gebäudebestände auf Basis objektiver Wärmedaten.</p>
+                            </div>
+                        </article>
+
+                        <div class="innovation-status" data-reveal>
+                            <span class="status-dot"></span>
+                            <p>
+                                <strong>Projektbezogene Umsetzung:</strong>
+                                Umfang und Terminierung richten sich nach Quartier, Genehmigungslage,
+                                Witterung, Datenschutz und verfügbarer Datengrundlage.
+                            </p>
                         </div>
+                    </div>
+
+                    <!-- Das Original-Pitchdeck wird als seitenweise horizontale Galerie dargestellt. -->
                     <div class="pitchdeck pitchdeck-carousel" data-pdf-deck data-reveal tabindex="0" aria-label="Pitchdeck Reduce Heat Demand, 12 Seiten">
                         <div class="deck-topbar">
                             <div>
@@ -691,126 +732,6 @@
                             </a>
                         </div>
                     </div>
-                    </article>
-
-                    <!-- GEBÄUDEAUSWERTUNG -->
-                    <article class="innovation-document-card" data-reveal>
-                        <div class="innovation-document-heading">
-                            <div>
-                                <span class="innovation-document-kicker">02 · Ergebnis</span>
-                                <h3>Gebäudeauswertung</h3>
-                                <p>Ein konkretes Beispiel dafür, wie aus thermografischen Aufnahmen eine verständliche Gebäudeanalyse entsteht.</p>
-                            </div>
-                            <a class="innovation-document-link"
-                               href="gebaeudeauswertung-demo.pdf"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                PDF öffnen <span aria-hidden="true">↗</span>
-                            </a>
-                        </div>
-
-                        <div class="building-analysis-preview">
-                            <iframe
-                                src="gebaeudeauswertung-demo.pdf#page=1&view=FitH"
-                                title="Beispiel einer Gebäudeauswertung"
-                                loading="lazy">
-                            </iframe>
-                        </div>
-
-                        <div class="innovation-document-caption">
-                            <div>
-                                <strong>Vom Wärmebild zur Handlungsempfehlung.</strong>
-                                <span>Sanierungs-, Solar- und weitere Gebäudepotenziale auf einen Blick.</span>
-                            </div>
-                            <a href="gebaeudeauswertung-demo.pdf"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Vollständige Auswertung ansehen ↗
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- POTENZIELLE KUNDEN -->
-                <section class="innovation-customer-section" aria-labelledby="innovation-customers-title">
-                    <header class="innovation-customer-heading" data-reveal>
-                        <div>
-                            <p class="eyebrow">Potenzielle Kunden</p>
-                            <h3 id="innovation-customers-title">Wer profitiert von der Lösung?</h3>
-                        </div>
-                        <p>
-                            Die Auswertung schafft Transparenz, spart Zeit und unterstützt
-                            fundierte Entscheidungen – von der strategischen Quartiersplanung
-                            bis zur konkreten Sanierung am Einzelgebäude.
-                        </p>
-                    </header>
-
-                    <div class="innovation-customer-grid">
-                        <article class="innovation-customer-card" data-reveal>
-                            <div class="innovation-customer-icon">
-                                <svg aria-hidden="true"><use href="#icon-house"></use></svg>
-                            </div>
-                            <span class="innovation-customer-number">01</span>
-                            <h4>Kommunen</h4>
-                            <p>Quartiere verstehen und energetischen Handlungsbedarf priorisieren.</p>
-                            <ul>
-                                <li>Gezieltere Wärmeplanung</li>
-                                <li>Effiziente Mittelverwendung</li>
-                                <li>Transparente Entscheidungsgrundlage</li>
-                            </ul>
-                        </article>
-
-                        <article class="innovation-customer-card" data-reveal>
-                            <div class="innovation-customer-icon">
-                                <svg aria-hidden="true"><use href="#icon-chart"></use></svg>
-                            </div>
-                            <span class="innovation-customer-number">02</span>
-                            <h4>Wohnungswirtschaft</h4>
-                            <p>Gebäudebestände datenbasiert bewerten und Investitionen priorisieren.</p>
-                            <ul>
-                                <li>Sanierungsbedarf erkennen</li>
-                                <li>Investitionen priorisieren</li>
-                                <li>Bestandsentwicklung strategisch planen</li>
-                            </ul>
-                        </article>
-
-                        <article class="innovation-customer-card" data-reveal>
-                            <div class="innovation-customer-icon">
-                                <svg aria-hidden="true"><use href="#icon-thermal"></use></svg>
-                            </div>
-                            <span class="innovation-customer-number">03</span>
-                            <h4>Quartiere & Siedlungen</h4>
-                            <p>Thermische Auffälligkeiten sichtbar machen und Eigentümer sensibilisieren.</p>
-                            <ul>
-                                <li>Schnelle Übersicht des Bestands</li>
-                                <li>Effektive Kommunikation</li>
-                                <li>Sanierungsanreize schaffen</li>
-                            </ul>
-                        </article>
-
-                        <article class="innovation-customer-card" data-reveal>
-                            <div class="innovation-customer-icon">
-                                <svg aria-hidden="true"><use href="#icon-compass"></use></svg>
-                            </div>
-                            <span class="innovation-customer-number">04</span>
-                            <h4>Eigentümer</h4>
-                            <p>Konkrete Hinweise erhalten und nächste Sanierungsschritte gezielt planen.</p>
-                            <ul>
-                                <li>Individuelle Auffälligkeiten erkennen</li>
-                                <li>Gezielt weiter untersuchen</li>
-                                <li>Grundlage für Sanierungsentscheidungen</li>
-                            </ul>
-                        </article>
-                    </div>
-                </section>
-
-                <div class="innovation-status" data-reveal>
-                    <span class="status-dot"></span>
-                    <p>
-                        <strong>Projektbezogene Umsetzung:</strong>
-                        Umfang und Terminierung richten sich nach Quartier, Genehmigungslage,
-                        Witterung, Datenschutz und verfügbarer Datengrundlage.
-                    </p>
                 </div>
 
                 <section class="district-analysis-process" aria-labelledby="quartiersablauf-title">
