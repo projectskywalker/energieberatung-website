@@ -4819,7 +4819,7 @@ body.nav-open .hero-particle-field {
         background: linear-gradient(135deg, var(--primary), var(--primary-strong)) !important;
         border-color: transparent !important;
         color: #fff !important;
-        box-shadow: 0 15px 38px rgba(0, 170, 255, 0.28) !important;
+        box-shadow: 0 5px 15px rgba(0, 170, 255, 0.28) !important;
     }
 
     /* Bild links, Förderung daneben; Platz für den fixierten WhatsApp-Button */
