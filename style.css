@@ -4226,6 +4226,7 @@ body.nav-open .hero-particle-field {
     /* Förderung auf Mobile anzeigen */
     .mobile-funding-button {
         display: inline-flex !important;
+        width: 180px;
     }
 
 }
@@ -4795,10 +4796,10 @@ body.nav-open .hero-particle-field {
     .mobile-profile-image {
         display: block !important;
         flex: 0 0 64px !important;
-        width: 64px !important;
-        height: 64px !important;
-        max-width: 64px !important;
-        min-width: 64px !important;
+        width: 80px !important;
+        height: 80px !important;
+        max-width: 80px !important;
+        min-width: 80px !important;
         aspect-ratio: 1 / 1 !important;
         border-radius: 50% !important;
         object-fit: cover !important;
