@@ -4812,9 +4812,13 @@ body.nav-open .hero-particle-field {
        von "Leistungen entdecken". */
     .mobile-funding-button {
         display: inline-flex !important;
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        max-width: none !important;
+         flex: 0 0 180px !important;
+         width: 180px !important;
+         min-width: 180px !important;
+         max-width: 180px !important;
+         font-weight: 700 !important;
+         font-size: 1.2rem !important;
+         white-space: nowrap !important;
         background: linear-gradient(135deg, var(--primary), var(--primary-strong)) !important;
         border-color: transparent !important;
         color: #fff !important;
