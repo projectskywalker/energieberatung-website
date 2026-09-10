@@ -4804,7 +4804,7 @@ body.nav-open .hero-particle-field {
         object-fit: cover !important;
         object-position: center center !important;
         overflow: hidden !important;
-        border: 2px solid rgba(0, 200, 255, 0.72) !important;
+        border: none !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
     }
 
