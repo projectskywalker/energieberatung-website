@@ -4226,7 +4226,6 @@ body.nav-open .hero-particle-field {
     /* Förderung auf Mobile anzeigen */
     .mobile-funding-button {
         display: inline-flex !important;
-        width: 180px;
     }
 
 }
@@ -4795,18 +4794,18 @@ body.nav-open .hero-particle-field {
     /* Profilbild: immer wirklich rund */
     .mobile-profile-image {
         display: block !important;
-        flex: 0 0 128px !important;
-        width: 128px !important;
-        height: 128px !important;
-        max-width: 128px !important;
-        min-width: 128px !important;
+        flex: 0 0 64px !important;
+        width: 64px !important;
+        height: 64px !important;
+        max-width: 64px !important;
+        min-width: 64px !important;
         aspect-ratio: 1 / 1 !important;
         border-radius: 50% !important;
         object-fit: cover !important;
         object-position: center center !important;
         overflow: hidden !important;
         border: 2px solid rgba(0, 200, 255, 0.72) !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.28) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
     }
 
     /* Förderung übernimmt auf Mobile den bisherigen Primary-Button-Stil
@@ -4819,7 +4818,7 @@ body.nav-open .hero-particle-field {
         background: linear-gradient(135deg, var(--primary), var(--primary-strong)) !important;
         border-color: transparent !important;
         color: #fff !important;
-        box-shadow: 0 5px 15px rgba(0, 170, 255, 0.28) !important;
+        box-shadow: 0 15px 38px rgba(0, 170, 255, 0.28) !important;
     }
 
     /* Bild links, Förderung daneben; Platz für den fixierten WhatsApp-Button */
@@ -4849,5 +4848,47 @@ body.nav-open .hero-particle-field {
     .hero-actions {
         gap: 10px !important;
         padding-right: 72px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE – PROFILBILD / WHATSAPP / FÖRDERUNG – FINAL
+   ========================================================= */
+@media (max-width: 960px) {
+    .site-header a[href="#leistungen"],
+    header a[href="#leistungen"] { display: none !important; }
+
+    .mobile-profile-image {
+        flex: 0 0 128px !important;
+        width: 128px !important; height: 128px !important;
+        max-width: 128px !important; min-width: 128px !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important; object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+    .mobile-funding-button {
+        flex: 0 0 145px !important;
+        width: 145px !important; min-width: 145px !important; max-width: 145px !important;
+        font-weight: 700 !important; white-space: nowrap !important;
+    }
+
+    .whatsapp-float {
+        opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+        transform: scale(0.82) !important; background: #128C7E !important;
+    }
+    .whatsapp-float.whatsapp-visible {
+        opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+        transform: scale(1) !important;
+    }
+}
+@media (max-width: 440px) {
+    .mobile-profile-image {
+        flex-basis: 116px !important; width: 116px !important; height: 116px !important;
+        max-width: 116px !important; min-width: 116px !important;
+    }
+    .mobile-funding-button {
+        flex-basis: 135px !important; width: 135px !important; min-width: 135px !important; max-width: 135px !important;
     }
 }

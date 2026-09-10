@@ -89,6 +89,81 @@
     </style>
 
     <script src="script.js" defer></script>
+
+    <style>
+    /* =========================================================
+       MOBILE – PROFILBILD / WHATSAPP / FÖRDERUNG – FINAL
+       Nur Mobile, Desktop unverändert
+       ========================================================= */
+    @media (max-width: 960px) {
+        /* Leistungen im gesamten mobilen Header sicher entfernen */
+        .site-header a[href="#leistungen"],
+        header a[href="#leistungen"] {
+            display: none !important;
+        }
+
+        /* Profilbild im Hero: doppelte Größe */
+        .mobile-profile-image {
+            flex: 0 0 128px !important;
+            width: 128px !important;
+            height: 128px !important;
+            max-width: 128px !important;
+            min-width: 128px !important;
+            aspect-ratio: 1 / 1 !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+        }
+
+        /* Förderung schmaler + fett */
+        .mobile-funding-button {
+            flex: 0 0 145px !important;
+            width: 145px !important;
+            min-width: 145px !important;
+            max-width: 145px !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+        }
+
+        /* WhatsApp zunächst unsichtbar; JS blendet ihn nach dem Hero-Profilbild ein */
+        .whatsapp-float {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            transform: scale(0.82) !important;
+        }
+
+        .whatsapp-float.whatsapp-visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+            transform: scale(1) !important;
+        }
+
+        /* Ruhigeres Grün */
+        .whatsapp-float {
+            background: #128C7E !important;
+        }
+    }
+
+    @media (max-width: 440px) {
+        .mobile-profile-image {
+            flex-basis: 116px !important;
+            width: 116px !important;
+            height: 116px !important;
+            max-width: 116px !important;
+            min-width: 116px !important;
+        }
+
+        .mobile-funding-button {
+            flex-basis: 135px !important;
+            width: 135px !important;
+            min-width: 135px !important;
+            max-width: 135px !important;
+        }
+    }
+    </style>
+
 </head>
 
 <body>
@@ -258,11 +333,11 @@
                             <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
                         </a>
                         <a href="#kontakt" class="button button-outline desktop-consultation-button">Erstberatung vereinbaren</a>
-                        <img src="images/profile_head.png"
+                        <img src="images/profile_head.jpg"
                              class="mobile-profile-image"
                              alt="Jerry Becker"
-                             width="128"
-                             height="128"
+                             width="64"
+                             height="64"
                              loading="lazy"
                              decoding="async">
                         <a href="#beg-em" class="button button-primary mobile-funding-button">Förderung</a>
@@ -1131,6 +1206,55 @@
         <path d="M12.04 2.2a9.76 9.76 0 0 0-8.45 14.65L2.2 21.8l5.1-1.34a9.76 9.76 0 1 0 4.74-18.26Zm0 17.8a8 8 0 0 1-4.08-1.12l-.29-.17-3.02.79.81-2.94-.19-.3a8 8 0 1 1 6.77 3.74Zm4.39-5.99c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.01.4 1.36.51.57.18 1.09.16 1.5.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
     </svg>
 </a>
+
+<script>
+(function () {
+    function initMobileWhatsApp() {
+        const profileImage = document.querySelector('.mobile-profile-image');
+        const whatsapp = document.querySelector('.whatsapp-float');
+        if (!profileImage || !whatsapp) return;
+
+        const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+        function updateInitialState() {
+            if (!mobileQuery.matches) {
+                whatsapp.classList.remove('whatsapp-visible');
+                return;
+            }
+
+            const rect = profileImage.getBoundingClientRect();
+            const visible = rect.bottom > 0 && rect.top < window.innerHeight;
+            whatsapp.classList.toggle('whatsapp-visible', !visible);
+        }
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                if (!mobileQuery.matches) {
+                    whatsapp.classList.remove('whatsapp-visible');
+                    return;
+                }
+                whatsapp.classList.toggle('whatsapp-visible', !entries[0].isIntersecting);
+            }, { threshold: 0 });
+
+            observer.observe(profileImage);
+        } else {
+            updateInitialState();
+            window.addEventListener('scroll', updateInitialState, { passive: true });
+            window.addEventListener('resize', updateInitialState);
+        }
+
+        mobileQuery.addEventListener?.('change', updateInitialState);
+        updateInitialState();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileWhatsApp);
+    } else {
+        initMobileWhatsApp();
+    }
+})();
+</script>
+
 </body>
 </body>
 </html>
