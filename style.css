@@ -4794,11 +4794,11 @@ body.nav-open .hero-particle-field {
     /* Profilbild: immer wirklich rund */
     .mobile-profile-image {
         display: block !important;
-        flex: 0 0 64px !important;
-        width: 64px !important;
-        height: 64px !important;
-        max-width: 64px !important;
-        min-width: 64px !important;
+        flex: 0 0 128px !important;
+        width: 128px !important;
+        height: 128px !important;
+        max-width: 128px !important;
+        min-width: 128px !important;
         aspect-ratio: 1 / 1 !important;
         border-radius: 50% !important;
         object-fit: cover !important;
@@ -4812,10 +4812,10 @@ body.nav-open .hero-particle-field {
        von "Leistungen entdecken". */
     .mobile-funding-button {
         display: inline-flex !important;
-         flex: 0 0 180px !important;
-         width: 180px !important;
-         min-width: 180px !important;
-         max-width: 180px !important;
+         flex: 0 0 250px !important;
+         width: 250px !important;
+         min-width: 250px !important;
+         max-width: 250px !important;
          font-weight: 700 !important;
          font-size: 1.2rem !important;
          white-space: nowrap !important;
