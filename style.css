@@ -4896,3 +4896,185 @@ body.nav-open .hero-particle-field {
         flex-basis: 135px !important; width: 135px !important; min-width: 135px !important; max-width: 135px !important;
     }
 }
+
+
+/* ==========================================================
+   FINAL – HERO PROFILBILD + MOBILE FÖRDERUNG
+   ========================================================== */
+
+.mobile-profile-image {
+    display: none !important;
+}
+
+.desktop-profile-image {
+    display: inline-block;
+    flex: 0 0 84px;
+    width: 84px;
+    height: 84px;
+    max-width: 84px;
+    min-width: 84px;
+    aspect-ratio: 1 / 1;
+    border: none !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    object-position: center center;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.hero-credentials {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* ==========================================================
+   FINAL – INNOVATION 3/5 + 2/5
+   ========================================================== */
+
+@media (min-width: 961px) {
+    .innovation-results-layout {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) !important;
+        gap: 28px !important;
+    }
+
+    .desktop-profile-image {
+        display: inline-block !important;
+    }
+}
+
+/* Nur die Bildvorschau zeigen – kein eingebetteter PDF-Reader */
+.building-analysis-preview {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4fbf8;
+    border-bottom: 1px solid var(--line);
+}
+
+.building-analysis-preview img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+}
+
+/* ==========================================================
+   FINAL – MOBILE
+   ========================================================== */
+
+@media (max-width: 960px) {
+
+    .mobile-services-button {
+        display: none !important;
+    }
+
+    .site-header a[href="#leistungen"],
+    header a[href="#leistungen"],
+    .nav-links-left a[href="#leistungen"] {
+        display: none !important;
+    }
+
+    .desktop-profile-image {
+        display: none !important;
+    }
+
+    /* Mobile: Förderung links, Profilbild direkt rechts daneben */
+    .hero-actions {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding-right: 78px !important;
+    }
+
+    .mobile-funding-button {
+        display: inline-flex !important;
+        flex: 0 0 145px !important;
+        width: 145px !important;
+        min-width: 145px !important;
+        max-width: 145px !important;
+        min-height: 50px !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+        background: linear-gradient(135deg, var(--primary), var(--primary-strong)) !important;
+        border-color: transparent !important;
+        color: #fff !important;
+        box-shadow: 0 15px 38px rgba(0, 170, 255, 0.28) !important;
+    }
+
+    .mobile-profile-image {
+        display: block !important;
+        flex: 0 0 128px !important;
+        width: 128px !important;
+        height: 128px !important;
+        max-width: 128px !important;
+        min-width: 128px !important;
+        aspect-ratio: 1 / 1 !important;
+        border: none !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        overflow: hidden !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    .whatsapp-float {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: scale(0.82) !important;
+        background: #128C7E !important;
+    }
+
+    .whatsapp-float.whatsapp-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: scale(1) !important;
+        background: #128C7E !important;
+    }
+
+    .building-analysis-preview {
+        height: 600px;
+    }
+}
+
+@media (max-width: 700px) {
+    .building-analysis-preview {
+        height: 520px;
+    }
+}
+
+@media (max-width: 440px) {
+    .hero-actions {
+        gap: 10px !important;
+        padding-right: 70px !important;
+    }
+
+    .mobile-profile-image {
+        flex-basis: 112px !important;
+        width: 112px !important;
+        height: 112px !important;
+        max-width: 112px !important;
+        min-width: 112px !important;
+    }
+
+    .mobile-funding-button {
+        flex-basis: 140px !important;
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        font-size: 1.1rem !important;
+    }
+
+    .building-analysis-preview {
+        height: 470px;
+    }
+}
