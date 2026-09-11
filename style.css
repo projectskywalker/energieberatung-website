@@ -5078,3 +5078,10 @@ body.nav-open .hero-particle-field {
         height: 470px;
     }
 }
+/* Kontaktformular auf Mobilgeräten ausblenden */
+@media (max-width: 768px) {
+    .contact-form,
+    #kontakt form {
+        display: none !important;
+    }
+}
