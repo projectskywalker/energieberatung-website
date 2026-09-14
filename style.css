@@ -5085,3 +5085,56 @@ body.nav-open .hero-particle-field {
         display: none !important;
     }
 }
+/* ==========================================================
+   LOGO – Montserrat
+   ========================================================== */
+
+.consultancy-brand-text {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.02;
+    gap: 2px;
+}
+
+/* Energieberatung */
+.consultancy-brand-text strong {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* für Wohngebäude */
+.consultancy-brand-text span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: rgba(221, 232, 244, 0.82);
+    white-space: nowrap;
+}
+
+/* Logo-Icon etwas größer */
+.site-header .consultancy-brand-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+}
+
+/* Mobile */
+@media (max-width: 960px) {
+    .site-header .consultancy-brand-icon {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+    }
+
+    .consultancy-brand-text strong {
+        font-size: 1.08rem;
+    }
+
+    .consultancy-brand-text span {
+        font-size: 0.76rem;
+    }
+}
