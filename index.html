@@ -406,6 +406,7 @@
                              fetchpriority="high"
                              decoding="async">
                         <div class="hero-image-shade" aria-hidden="true"></div>
+                        <span class="ai-label ai-label--hero">KI-generiert</span>
                     </figure>
                 </div>
             </div>
@@ -434,51 +435,77 @@
                     </p>
                 </header>
 
-                <div class="services-grid">
-                    <article class="service-card" data-reveal>
-                        <div class="service-icon"><svg><use href="#icon-house"></use></svg></div>
-                        <span class="service-number">01</span>
-                        <h3>Vor-Ort-Energieberatung</h3>
-                        <p>
-                            Systematische Bestandsaufnahme von Gebäudehülle, Anlagentechnik,
-                            Energieverbrauch und individuellen Rahmenbedingungen.
-                        </p>
-                        <ul class="check-list">
-                            <li>Gebäude- und Verbrauchsanalyse</li>
-                            <li>Energieausweise erstellen</li>
-                            <li>individuelle Beratung und Handlungsempfehlungen</li>
-                        </ul>
+                <div class="services-grid flip-grid">
+                    <article class="flip-card" data-flip data-reveal>
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <span class="service-number">01</span>
+                                <h3><button class="flip-toggle" type="button" aria-expanded="false" aria-controls="flip-info-beratung">Vor-Ort-Energieberatung</button></h3>
+                                <p>
+                                    Systematische Bestandsaufnahme von Gebäudehülle, Anlagentechnik,
+                                    Energieverbrauch und individuellen Rahmenbedingungen.
+                                </p>
+                                <ul class="check-list">
+                                    <li>Gebäude- und Verbrauchsanalyse</li>
+                                    <li>Energieausweise erstellen</li>
+                                    <li>individuelle Beratung und Handlungsempfehlungen</li>
+                                </ul>
+                            </div>
+                            <div class="flip-back" id="flip-info-beratung">
+                                <img class="flip-image" src="images/Leistung_beratung.webp" width="800" height="800" loading="lazy" alt="Zwei Energieberater in Warnwesten im Gespräch bei einer Vor-Ort-Begehung">
+                                <span class="ai-label">KI-generiert</span>
+                                <button class="flip-close" type="button">Zurück <span aria-hidden="true">↺</span></button>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="service-card featured-card" data-reveal>
-                        <div class="service-icon"><svg><use href="#icon-route"></use></svg></div>
-                        <span class="service-number">02</span>
-                        <span class="card-label">Beliebter Einstieg</span>
-                        <h3>Individueller Sanierungsfahrplan iSFP</h3>
-                        <p>
-                            Ein abgestimmter Fahrplan zeigt, welche Maßnahmen sinnvoll aufeinander
-                            aufbauen.
-                        </p>
-                        <ul class="check-list">
-                            <li>Sanierungsbedarf analysieren</li>
-                            <li>Sanierungsvarianten vergleichen</li>
-                            <li>Sanierungsmaßnahmenplan erstellen</li>
-                        </ul>
+                    <article class="flip-card featured-card" data-flip data-reveal>
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <span class="service-number">02</span>
+                                <span class="card-label">Beliebter Einstieg</span>
+                                <h3><button class="flip-toggle" type="button" aria-expanded="false" aria-controls="flip-info-isfp">Individueller Sanierungsfahrplan iSFP</button></h3>
+                                <p>
+                                    Ein abgestimmter Fahrplan zeigt, welche Maßnahmen sinnvoll aufeinander
+                                    aufbauen.
+                                </p>
+                                <ul class="check-list">
+                                    <li>Sanierungsbedarf analysieren</li>
+                                    <li>Sanierungsvarianten vergleichen</li>
+                                    <li>Sanierungsmaßnahmenplan erstellen</li>
+                                </ul>
+                            </div>
+                            <div class="flip-back" id="flip-info-isfp">
+                                <img class="flip-image" src="images/Leistung_iFSP.webp" width="800" height="800" loading="lazy" alt="Grafik: In 6 Schritten zum individuellen Sanierungsfahrplan – Beratungsgespräch, Ist-Zustand erfassen, Sanierungsvorschläge entwickeln, Fahrplan abstimmen und erstellen, Abschlussgespräch, Umsetzen und sanieren">
+                                <span class="ai-label">KI-generiert</span>
+                                <button class="flip-close" type="button">Zurück <span aria-hidden="true">↺</span></button>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="service-card" id="beg-em" data-reveal>
-                        <div class="service-icon"><svg><use href="#icon-funding"></use></svg></div>
-                        <span class="service-number">03</span>
-                        <h3>BEG EM-Förderung</h3>
-                        <p>
-                            Energetische Sanierungsmaßnahmen gezielt planen und fördern lassen.
-                        </p>
-                        <ul class="check-list">
-                            <li>Fördermittelbegleitung</li>
-                            <li>Fördermöglichkeiten prüfen</li>
-                            <li>Fördermittelanträge erstellen</li>                      
-                        </ul>
+                    <article class="flip-card" id="beg-em" data-flip data-reveal>
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <span class="service-number">03</span>
+                                <h3><button class="flip-toggle" type="button" aria-expanded="false" aria-controls="flip-info-beg">BEG EM-Förderung</button></h3>
+                                <p>
+                                    Energetische Sanierungsmaßnahmen gezielt planen und fördern lassen.
+                                </p>
+                                <ul class="check-list">
+                                    <li>Fördermittelbegleitung</li>
+                                    <li>Fördermöglichkeiten prüfen</li>
+                                    <li>Fördermittelanträge erstellen</li>
+                                </ul>
+                            </div>
+                            <div class="flip-back" id="flip-info-beg">
+                                <img class="flip-image" src="images/Leistung_BEG.webp" width="800" height="800" loading="lazy" alt="Grafik: BEG-Förderung für Einzelmaßnahmen – Heizungsoptimierung bis zu 70 %, Fenstertausch, Wärmedämmung, Solarthermie, Lüftungsanlagen und Gebäudeautomation jeweils bis zu 20 %">
+                                <span class="ai-label">KI-generiert</span>
+                                <button class="flip-close" type="button">Zurück <span aria-hidden="true">↺</span></button>
+                            </div>
+                        </div>
                     </article>
+
+                </div>
 <!--
                     <article class="service-card" data-reveal>
                         <div class="service-icon"><svg><use href="#icon-heatpump"></use></svg></div>
@@ -524,8 +551,7 @@
                             <li>Begleitung bis zum Nachweis</li>
                         </ul>
                     </article>
-                </div>
-            -->
+-->
                 <div class="section-note" data-reveal>
                     <svg aria-hidden="true"><use href="#icon-dialog"></use></svg>
                     <p>
@@ -718,12 +744,6 @@
                             </div>
                             <div class="deck-topbar-actions">
                                 <span class="deck-counter" data-pdf-counter>01 / 12</span>
-                                <a class="deck-open-link"
-                                   href="pitchdeck.pdf"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    PDF öffnen <span aria-hidden="true">↗</span>
-                                </a>
                             </div>
                         </div>
 
@@ -815,9 +835,6 @@
                             <p>
                                 Mit Mausrad, Pfeiltasten oder Wischen wechseln Sie seitenweise.
                             </p>
-                            <a href="pitchdeck.pdf" target="_blank" rel="noopener noreferrer">
-                                PDF öffnen
-                            </a>
                         </div>
                     </div>
                     </article>

@@ -7,7 +7,7 @@ Die Website ist ohne Framework aufgebaut und kann direkt in Visual Studio Code b
 - `index.html` – vollständige One-Page-Website
 - `style.css` – Layout, Responsive Design, Navigation, Lichtpunkte und Pitchdeck-Darstellung
 - `script.js` – Navigation, Scroll-Effekte, zufällige Lichtpunkte, seitenweises Pitchdeck und Kontaktformular
-- `pitchdeck.pdf` – bereitgestelltes Original-Pitchdeck „Reduce Heat Demand“ zum Öffnen im neuen Tab
+- `pitchdeck.pdf` – Original-Pitchdeck „Reduce Heat Demand“ (nur Quelle für die gerenderten Seiten; auf der Website nicht verlinkt und nicht herunterladbar)
 - `images/pitchdeck/page-01.webp` bis `page-12.webp` – für die horizontale, seitenweise Website-Darstellung gerenderte Pitchdeck-Seiten
 - `images/energieberatung-label.svg` – dezentes Effizienzlabel-Symbol der allgemeinen Energieberatung
 - `images/logo_skywalker.png` – Logo für den Navigationspunkt und den Abschnitt „Innovation“

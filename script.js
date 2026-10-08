@@ -173,6 +173,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----------------------------------------------------------
+    // Leistungen: Wendekarten (Text vorne, Bild hinten – nur per Klick/Tippen/Tastatur)
+    // ----------------------------------------------------------
+
+    const flipCards = [...document.querySelectorAll("[data-flip]")];
+
+    const setFlipOpen = (card, open) => {
+        const toggle = card.querySelector(".flip-toggle");
+        const back = card.querySelector(".flip-back");
+
+        card.classList.toggle("is-open", open);
+        toggle?.setAttribute("aria-expanded", String(open));
+        if (back) back.inert = !open; // Verdeckte Rückseite nicht per Tab erreichbar
+    };
+
+    flipCards.forEach((card) => {
+        const toggle = card.querySelector(".flip-toggle");
+        const back = card.querySelector(".flip-back");
+        const close = card.querySelector(".flip-close");
+
+        setFlipOpen(card, false);
+
+        toggle?.addEventListener("click", (event) => {
+            const open = !card.classList.contains("is-open");
+            setFlipOpen(card, open);
+
+            // Tastatur (detail === 0): Fokus auf die Rückseite weitergeben
+            if (open && event.detail === 0 && close) {
+                window.setTimeout(() => close.focus({ preventScroll: true }), 350);
+            }
+        });
+
+        close?.addEventListener("click", (event) => {
+            event.stopPropagation();
+            setFlipOpen(card, false);
+            toggle?.focus({ preventScroll: true });
+        });
+
+        // Erneuter Klick auf die Rückseite dreht die Karte zurück
+        back?.addEventListener("click", () => setFlipOpen(card, false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+
+        flipCards
+            .filter((card) => card.classList.contains("is-open"))
+            .forEach((card) => {
+                const hadFocus = card.contains(document.activeElement);
+                setFlipOpen(card, false);
+                if (hadFocus) card.querySelector(".flip-toggle")?.focus({ preventScroll: true });
+            });
+    });
+
+    // ----------------------------------------------------------
     // Aktiven Navigationspunkt markieren
     // ----------------------------------------------------------
 

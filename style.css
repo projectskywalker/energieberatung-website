@@ -991,6 +991,191 @@ section {
     text-transform: uppercase;
 }
 
+/* Wendekarten (Leistungen): Vorderseite = Text, Rückseite = Bild.
+   Gedreht wird nur per Klick/Tippen/Tastatur über .is-open (script.js). */
+.flip-grid {
+    align-items: start;
+}
+
+.flip-card {
+    position: relative;
+    perspective: 1600px;
+}
+
+.flip-inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.flip-card.is-open .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 55%),
+        var(--surface);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition:
+        border-color 0.38s ease,
+        box-shadow 0.38s ease;
+}
+
+.flip-card.featured-card .flip-front,
+.flip-card.featured-card .flip-back {
+    border-color: rgba(0, 200, 255, 0.35);
+    background:
+        linear-gradient(145deg, rgba(0, 200, 255, 0.12), transparent 58%),
+        var(--surface-strong);
+}
+
+/* Vorderseite mindestens quadratisch, damit das Bild auf der Rückseite 1:1 passt */
+.flip-front {
+    position: relative;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    flex-direction: column;
+    padding: 30px;
+    overflow: visible; /* wächst bei langem Text, statt abzuschneiden */
+}
+
+.flip-card .card-label {
+    top: 28px;
+    left: 30px;
+}
+
+.flip-front .service-number {
+    top: 30px;
+    right: 30px;
+}
+
+.flip-front h3 {
+    margin: 36px 0 14px;
+    font-size: 1.32rem;
+    line-height: 1.25;
+}
+
+.flip-front > p {
+    margin-bottom: 20px;
+    color: var(--text-soft);
+    font-size: 0.94rem;
+}
+
+.flip-toggle {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Ganze Vorderseite ist Klick-/Tippfläche */
+.flip-toggle::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    border-radius: var(--radius);
+}
+
+.flip-toggle:focus-visible {
+    outline: none;
+}
+
+.flip-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+/* Bild bleibt immer quadratisch, auch wenn die Textseite höher wird */
+.flip-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.flip-close {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(6, 16, 29, 0.82);
+    backdrop-filter: blur(8px);
+    color: var(--primary);
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.flip-close span {
+    font-size: 1rem;
+}
+
+.flip-close:hover {
+    color: var(--text);
+}
+
+.flip-card:focus-within .flip-front,
+.flip-card.is-open .flip-back {
+    border-color: var(--line-strong);
+}
+
+.flip-toggle:focus-visible::after,
+.flip-close:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .flip-card:not(.is-open):hover .flip-inner {
+        transform: translateY(-8px);
+    }
+
+    .flip-card:hover .flip-front {
+        border-color: var(--line-strong);
+        box-shadow: 0 24px 55px rgba(0, 0, 0, 0.24);
+    }
+}
+
+@media (max-width: 440px) {
+    .flip-front {
+        padding: 24px;
+    }
+
+    .flip-front h3 {
+        margin-top: 30px;
+    }
+
+    .flip-front .service-number {
+        top: 24px;
+        right: 24px;
+    }
+}
+
 .section-note {
     grid-column: 1 / -1;
 
@@ -2831,7 +3016,33 @@ section {
         opacity: 1;
         transform: none;
     }
+
+    /* Wendekarten ohne Drehung: Rückseite wird über der Vorderseite eingeblendet */
+    .flip-inner,
+    .flip-card.is-open .flip-inner,
+    .flip-card:not(.is-open):hover .flip-inner {
+        transform: none;
+    }
+
+    .flip-front,
+    .flip-back {
+        -webkit-backface-visibility: visible;
+        backface-visibility: visible;
+    }
+
+    .flip-back {
+        z-index: 5;
+        visibility: hidden;
+        opacity: 0;
+        transform: none;
+    }
+
+    .flip-card.is-open .flip-back {
+        visibility: visible;
+        opacity: 1;
+    }
 }
+
 
 /* ==========================================================
    FINAL INTEGRATION: LOGOS, HERO-LICHTPUNKTE, PDF-PITCHDECK,
@@ -5136,5 +5347,44 @@ body.nav-open .hero-particle-field {
 
     .consultancy-brand-text span {
         font-size: 0.76rem;
+    }
+}
+/* ==========================================================
+   KENNZEICHNUNG KI-GENERIERTER BILDER
+   ========================================================== */
+
+.ai-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(6, 16, 29, 0.82);
+    backdrop-filter: blur(8px);
+    color: var(--text);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.ai-label--hero {
+    top: auto;
+    right: 18px;
+    bottom: 18px;
+    left: auto;
+    z-index: 4;
+}
+
+/* Mobil liegt das Hero-Bild als Hintergrund hinter dem Text – Label oben rechts unter dem Header */
+@media (max-width: 960px) {
+    .ai-label--hero {
+        top: calc(var(--header-height) + 12px);
+        right: 16px;
+        bottom: auto;
     }
 }
