@@ -7,7 +7,7 @@ Die Website ist ohne Framework aufgebaut und kann direkt in Visual Studio Code b
 - `index.html` – vollständige One-Page-Website
 - `style.css` – Layout, Responsive Design, Navigation, Lichtpunkte und Pitchdeck-Darstellung
 - `script.js` – Navigation, Scroll-Effekte, zufällige Lichtpunkte, seitenweises Pitchdeck und Kontaktformular
-- `pitchdeck.pdf` – Original-Pitchdeck „Reduce Heat Demand“ (nur Quelle für die gerenderten Seiten; auf der Website nicht verlinkt und nicht herunterladbar)
+- Das Original-Pitchdeck `pitchdeck.pdf` liegt bewusst außerhalb des Website-Ordners (eine Ebene höher), damit es nicht heruntergeladen werden kann. Es dient nur als Quelle für die gerenderten Seiten.
 - `images/pitchdeck/page-01.webp` bis `page-12.webp` – für die horizontale, seitenweise Website-Darstellung gerenderte Pitchdeck-Seiten
 - `images/energieberatung-label.svg` – dezentes Effizienzlabel-Symbol der allgemeinen Energieberatung
 - `images/logo_skywalker.png` – Logo für den Navigationspunkt und den Abschnitt „Innovation“
@@ -44,7 +44,7 @@ Danach im Browser `http://localhost:8000` öffnen.
 
 ## Pitchdeck aktualisieren
 
-Wird `pitchdeck.pdf` später ersetzt, müssen auch die Dateien in `images/pitchdeck/` neu aus dem PDF gerendert werden. Die HTML-Datei erwartet derzeit genau zwölf Seiten mit den Dateinamen `page-01.webp` bis `page-12.webp`.
+Wird `../pitchdeck.pdf` später ersetzt, müssen auch die Dateien in `images/pitchdeck/` neu aus dem PDF gerendert werden. Die HTML-Datei erwartet derzeit genau zwölf Seiten mit den Dateinamen `page-01.webp` bis `page-12.webp`.
 
 ## Vor Veröffentlichung anpassen
 
